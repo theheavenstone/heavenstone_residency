@@ -45,9 +45,9 @@ export default function ApartmentsPage() {
             >
               <div className="flex flex-col p-6 mx-auto text-brand-dark space-y-4">
                 <div>
-                  <h3 className="mb-1.5 text-[30px] md:text-3xl text-center font-extrabold">
+                  <h2 className="mb-1.5 text-[30px] md:text-3xl text-center font-extrabold">
                     1BHK Premium Apartment
-                  </h3>
+                  </h2>
                   <p className="font-medium text-center text-base sm:text-lg">
                     Perfect for solo travelers or couples
                   </p>

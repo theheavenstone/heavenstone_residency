@@ -59,6 +59,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoSrc }) => {
               <video
                 key={videoKey}
                 className="w-full h-full rounded-lg"
+                title="Apartment Home Tour Video"
                 controls
                 autoPlay
               >

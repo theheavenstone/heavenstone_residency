@@ -7,67 +7,62 @@ import React, { useState } from "react";
 
 const initValues = {
   name: "",
-  phone_number: "",
-  email: "",
   role: "",
-  country_code: "+91",
+  contact: "",
+  message: "I'm interested in renting this apartment.",
 };
 
 export default function Contact() {
   const [state, setState] = useState({ values: initValues });
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
 
   const { values } = state;
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setState((prev) => ({
       ...prev,
       values: {
         ...prev.values,
-        [name]: value,
+        [name]: value.trim(),
       },
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (loading) return;
 
-    if (!values.name || !values.email || !values.role || !values.phone_number) {
-      alert("Please fill in all fields");
+    const { name, contact, role } = values;
+
+    if (!name || !contact || !role) {
+      alert("Please fill in all required fields.");
       return;
     }
 
-    const phoneNumber = values.phone_number.trim();
-    const phoneAsNumber = Number(phoneNumber);
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact);
+    const isPhone = /^[0-9]{10}$/.test(contact);
 
-    if (!phoneNumber || isNaN(phoneAsNumber) || phoneNumber.length !== 10) {
-      alert("Please enter a valid 10-digit phone number.");
+    if (!isEmail && !isPhone) {
+      alert("Please enter a valid email address or 10-digit phone number.");
       return;
     }
+
     setLoading(true);
 
     const response = await sendContactForm(values);
 
     if (response.success) {
-      setMessage(response.message);
+      setStatus(response.message);
       setState({ values: initValues });
     }
     setLoading(false);
   };
-
-  const countryCodes = [
-    { code: "+1", label: "🇺🇸 US" },
-    { code: "+44", label: "🇬🇧 UK" },
-    { code: "+91", label: "🇮🇳 India" },
-    { code: "+61", label: "🇦🇺 Australia" },
-    { code: "+81", label: "🇯🇵 Japan" },
-  ];
 
   const socialMediaLinks = [
     {
@@ -99,7 +94,7 @@ export default function Contact() {
         </p>
 
         <div className="flex flex-col lg:flex-row gap-10 items-center justify-center w-full mt-8">
-          <div className="space-y-4 text-brand-dark  text-sm md:text-base lg:text-lg">
+          <div className="space-y-4 text-brand-dark  text-sm md:text-base lg:text-lg w-full">
             <div className="space-y-0.5 text-center lg:text-left">
               <h2 className="text-2xl md:text-3xl tracking-tight font-extrabold text-center lg:text-left">
                 HEAVENSTONE RESIDENCY
@@ -150,15 +145,15 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="space-y-5 rounded-lg border border-brand-mid p-2 md:p-6">
+          <div className="space-y-5 rounded-lg border border-brand-mid p-2 md:p-6 w-full md:w-1/2">
             <p className="text-3xl text-center font-medium text-brand-dark">
               Get in Touch
             </p>
 
             <hr className="border-brand-dark" />
-            {message && (
+            {status && (
               <div className="flex justify-center items-center gap-2 text-xl font-semibold text-center text-brand-dark">
-                <p>{message}</p>
+                <p>{status}</p>
                 <Icon
                   icon="teenyicons:tick-circle-outline"
                   width="18"
@@ -170,7 +165,7 @@ export default function Contact() {
             <form
               action="#"
               onSubmit={handleSubmit}
-              className="space-y-4 text-brand-dark "
+              className="space-y-4 text-brand-light "
             >
               <div className="space-y-2">
                 <label
@@ -183,27 +178,8 @@ export default function Contact() {
                   type="text"
                   name="name"
                   className="w-full  border-b border-brand-mid  rounded-lg p-2 placeholder:text-brand-dark/60"
-                  placeholder="Enter your first name"
+                  placeholder="Enter your full name"
                   value={values.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor=""
-                  className="flex items-center gap-1 text-brand-dark"
-                >
-                  Email
-                  <Icon icon="mdi:required" />
-                </label>
-                <input
-                  type="text"
-                  name="email"
-                  className="w-full  border-b border-brand-mid  rounded-lg p-2 placeholder:text-brand-dark/60"
-                  placeholder="Enter your first name"
-                  value={values.email}
                   onChange={handleChange}
                   required
                 />
@@ -217,23 +193,24 @@ export default function Contact() {
                   Role <Icon icon="mdi:required" />
                 </label>
                 <select
+                  id="role"
                   name="role"
                   className="w-full border-b border-brand-mid rounded-lg p-2 text-brand-dark appearance-none relative pr-10 cursor-pointer focus:outline-none focus:ring-0 "
                   value={values.role}
                   onChange={handleChange}
                   required
                 >
-                  <option value="" disabled className="text-brand-dark">
+                  <option value="" disabled className="text-gray-400">
                     Select your role
                   </option>
                   <option
-                    value="agent"
+                    value="Agent"
                     className=" text-brand-dark hover:bg-primary-500"
                   >
                     Agent
                   </option>
                   <option
-                    value="client"
+                    value="Client"
                     className=" text-brand-dark hover:bg-primary-500"
                   >
                     Client
@@ -246,42 +223,41 @@ export default function Contact() {
                   htmlFor="phone_number"
                   className="flex items-center gap-1 text-brand-dark"
                 >
-                  Phone Number <Icon icon="mdi:required" />
+                  Email or Phone Number <Icon icon="mdi:required" />
                 </label>
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
-                  <div className="relative">
-                    <select
-                      name="country_code"
-                      className=" border-b border-brand-mid rounded-lg p-2 text-brand-dark"
-                      value={values.country_code}
-                      onChange={handleChange}
-                    >
-                      {countryCodes.map((country) => (
-                        <option key={country.code} value={country.code}>
-                          {country.label} {country.code}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
 
-                  <input
-                    type="text"
-                    name="phone_number"
-                    maxLength={10}
-                    className="w-full border-b border-brand-mid rounded-lg p-2 placeholder:text-brand-dark/60"
-                    placeholder="Enter your phone number"
-                    value={values.phone_number}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
+                <input
+                  type="text"
+                  name="contact"
+                  className="w-full  border-b border-brand-mid text-brand-dark rounded-lg p-2 placeholder:text-brand-dark/60"
+                  placeholder="Enter your email or phone number"
+                  value={values.contact}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label
+                  htmlFor=""
+                  className="flex items-center gap-1 text-brand-dark"
+                >
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  className="w-full  border border-brand-mid text-brand-dark rounded-lg p-0.5 placeholder:text-brand-dark/60"
+                  placeholder="Enter your first name"
+                  value={values.message}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="flex justify-center">
                 {loading && (
                   <button
-                    disabled={loading}
                     type="submit"
+                    disabled={loading}
                     className="bg-brand-light text-brand-dark hover:text-brand-light hover:bg-brand-mid transition-colors duration-500 ease-in-out py-3 px-8 text-base font-medium text-center  rounded-lg "
                   >
                     <Spinner aria-label="Spinner button example" size="sm" />
@@ -291,7 +267,7 @@ export default function Contact() {
 
                 {!loading && (
                   <button
-                    disabled={message.length > 0}
+                    disabled={status.length > 0}
                     type="submit"
                     className="bg-brand-light text-brand-dark hover:text-brand-light hover:bg-brand-mid transition-colors duration-500 ease-in-out py-3 px-8 text-base font-medium text-center  rounded-lg "
                   >

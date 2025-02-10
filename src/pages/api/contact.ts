@@ -9,22 +9,29 @@ interface ContactMessageFields {
 const CONTACT_MESSAGE_FIELDS: ContactMessageFields = {
   name: "Full Name",
   role: "Role",
-  email: "Email",
-  full_phone_number: "Phone Number",
-
+  contact: "Contact",
+  message: "Message",
 };
 
 const generateEmailContent = (data: ContactFormData) => {
   const name = data.name.trim();
-  const fullPhoneNumber = `${data.country_code} ${data.phone_number}`.trim();
-  const phoneHref = `tel:${data.country_code}${data.phone_number}`.replace(/\s+/g, "");
-  const emailHref = `mailto:${data.email}`;
+
+  const contactValue = data.contact.trim();
+  const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
+  const isPhone = /^[0-9]{10}$/.test(contactValue);
+
+  let contactHref = contactValue;
+  if (isEmail) {
+    contactHref = `mailto:${contactValue}`;
+  } else if (isPhone) {
+    contactHref = `tel:${contactValue}`;
+  }
 
   const modifiedData = {
     name: name,
-    email: `<a href="${emailHref}" style="color: blue; text-decoration: none;">${data.email} :</a>`,
-    full_phone_number: `<a href="${phoneHref}" style="color: blue; text-decoration: none;">${fullPhoneNumber}</a>`,
+    contact: `<a href="${contactHref}" style="color: blue; text-decoration: none;">${data.contact}</a>`,
     role: data.role,
+    message: data.message
   };
 
   const stringData = Object.entries(modifiedData).reduce(
@@ -94,7 +101,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const data: ContactFormData = req.body;
 
 
-    if (!data || !data.name || !data.email || !data.country_code || !data.phone_number || !data.role) {
+    if (!data || !data.name || !data.contact || !data.role) {
+      console.log("Invalid data received");
       return res.status(400).send({ message: "Bad request" });
     }
 

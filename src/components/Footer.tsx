@@ -14,67 +14,62 @@ import Copywright from "./Copywright";
 
 const initValues = {
   name: "",
-  phone_number: "",
-  email: "",
   role: "",
-  country_code: "+91",
+  contact: "",
+  message: "I'm interested in renting this apartment.",
 };
 
 export default function Footer() {
   const [state, setState] = useState({ values: initValues });
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
 
   const { values } = state;
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setState((prev) => ({
       ...prev,
       values: {
         ...prev.values,
-        [name]: value,
+        [name]: value.trim(),
       },
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (loading) return;
 
-    if (!values.name || !values.email || !values.role || !values.phone_number) {
-      alert("Please fill in all fields");
+    const { name, contact, role } = values;
+
+    if (!name || !contact || !role) {
+      alert("Please fill in all required fields.");
       return;
     }
 
-    const phoneNumber = values.phone_number.trim();
-    const phoneAsNumber = Number(phoneNumber);
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact);
+    const isPhone = /^[0-9]{10}$/.test(contact);
 
-    if (!phoneNumber || isNaN(phoneAsNumber) || phoneNumber.length !== 10) {
-      alert("Please enter a valid 10-digit phone number.");
+    if (!isEmail && !isPhone) {
+      alert("Please enter a valid email address or 10-digit phone number.");
       return;
     }
+
     setLoading(true);
 
     const response = await sendContactForm(values);
 
     if (response.success) {
-      setMessage(response.message);
+      setStatus(response.message);
       setState({ values: initValues });
     }
     setLoading(false);
   };
-
-  const countryCodes = [
-    { code: "+1", label: "🇺🇸 US" },
-    { code: "+44", label: "🇬🇧 UK" },
-    { code: "+91", label: "🇮🇳 India" },
-    { code: "+61", label: "🇦🇺 Australia" },
-    { code: "+81", label: "🇯🇵 Japan" },
-  ];
 
   const socialMediaLinks = [
     {
@@ -130,6 +125,7 @@ export default function Footer() {
                       <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1964.5139398659078!2d76.27657742635897!3d10.014555691029862!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d7f3ab63f65%3A0xd7063caa9c3ca6ff!2sHeavenstone%20Ln%2C%20Vaduthala%2C%20Ernakulam%2C%20Kochi%2C%20Kerala%20682012!5e0!3m2!1sen!2sin!4v1738788422988!5m2!1sen!2sin"
                         loading="lazy"
+                        title="apartment location"
                         className="rounded-xl text-center w-full h-full"
                       ></iframe>
                     </div>
@@ -185,9 +181,9 @@ export default function Footer() {
 
                     <hr className="border-brand-light" />
 
-                    {message && (
+                    {status && (
                       <div className="flex justify-center items-center gap-2 text-xl font-semibold text-center text-brand-light">
-                        <p>{message}</p>
+                        <p>{status}</p>
                         <Icon
                           icon="teenyicons:tick-circle-outline"
                           width="18"
@@ -217,32 +213,8 @@ export default function Footer() {
                           type="text"
                           name="name"
                           className="w-full bg-brand-dark border-b border-brand-light  rounded-lg p-2 placeholder:text-brand-light/60"
-                          placeholder="Enter your first name"
+                          placeholder="Enter your full name"
                           value={values.name}
-                          onChange={handleChange}
-                          required
-                        />
-                      </motion.div>
-
-                      <motion.div
-                        className="space-y-2"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                      >
-                        <label
-                          htmlFor=""
-                          className="flex items-center gap-1 text-brand-light"
-                        >
-                          Email
-                          <Icon icon="mdi:required" />
-                        </label>
-                        <input
-                          type="text"
-                          name="email"
-                          className="w-full bg-brand-dark border-b border-brand-light  rounded-lg p-2 placeholder:text-brand-light/60"
-                          placeholder="Enter your first name"
-                          value={values.email}
                           onChange={handleChange}
                           required
                         />
@@ -271,13 +243,13 @@ export default function Footer() {
                             Select your role
                           </option>
                           <option
-                            value="agent"
+                            value="Agent"
                             className="bg-brand-mid text-brand-light hover:bg-primary-500"
                           >
                             Agent
                           </option>
                           <option
-                            value="client"
+                            value="Client"
                             className="bg-brand-mid text-brand-light hover:bg-primary-500"
                           >
                             Client
@@ -295,35 +267,39 @@ export default function Footer() {
                           htmlFor="phone_number"
                           className="flex items-center gap-1 text-brand-light"
                         >
-                          Phone Number <Icon icon="mdi:required" />
+                          Email or Phone Number <Icon icon="mdi:required" />
                         </label>
-                        <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
-                          <div className="relative">
-                            <select
-                              name="country_code"
-                              className="bg-brand-dark border-b border-brand-light rounded-lg p-2 text-brand-light"
-                              value={values.country_code}
-                              onChange={handleChange}
-                            >
-                              {countryCodes.map((country) => (
-                                <option key={country.code} value={country.code}>
-                                  {country.label} {country.code}
-                                </option>
-                              ))}
-                            </select>
-                          </div>
 
-                          <input
-                            type="text"
-                            name="phone_number"
-                            maxLength={10}
-                            className="w-full bg-brand-dark border-b border-brand-light rounded-lg p-2 placeholder:text-brand-light/60"
-                            placeholder="Enter your phone number"
-                            value={values.phone_number}
-                            onChange={handleChange}
-                            required
-                          />
-                        </div>
+                        <input
+                          type="text"
+                          name="contact"
+                          className="w-full bg-brand-dark border-b border-brand-light rounded-lg p-2 placeholder:text-brand-light/60"
+                          placeholder="Enter your email or phone number"
+                          value={values.contact}
+                          onChange={handleChange}
+                          required
+                        />
+                      </motion.div>
+
+                      <motion.div
+                        className="space-y-2"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                      >
+                        <label
+                          htmlFor=""
+                          className="flex items-center gap-1 text-brand-light"
+                        >
+                          Message
+                        </label>
+                        <textarea
+                          name="message"
+                          className="w-full bg-brand-dark border-b border-brand-light  rounded-lg p-2 placeholder:text-brand-light/60"
+                          placeholder="Enter your first name"
+                          value={values.message}
+                          onChange={handleChange}
+                        />
                       </motion.div>
 
                       <motion.div
@@ -348,7 +324,7 @@ export default function Footer() {
 
                         {!loading && (
                           <button
-                            disabled={message.length > 0}
+                            disabled={status.length > 0}
                             type="submit"
                             className="bg-brand-light text-brand-dark hover:text-brand-light hover:bg-brand-mid transition-colors duration-500 ease-in-out py-3 px-8 text-base font-medium text-center  rounded-lg "
                           >

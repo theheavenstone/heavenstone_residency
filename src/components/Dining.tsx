@@ -78,9 +78,9 @@ export default function Dining() {
                 className="bg-brand-light/55 rounded-xl h-auto p-5 space-y-4"
               >
                 <div className="flex flex-col p-6 mx-auto text-brand-dark">
-                  <h3 className="mb-1.5 text-[30px] md:text-3xl text-center font-extrabold">
+                  <h1 className="mb-1.5 text-[30px] md:text-3xl text-center font-extrabold">
                     {plan.title}
-                  </h3>
+                  </h1>
                   <p className="font-medium text-center text-base sm:text-lg">
                     {plan.description}
                   </p>
@@ -139,7 +139,7 @@ export default function Dining() {
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="heading-1">Our Food Philosophy</h3>
+              <h2 className="heading-1">Our Food Philosophy</h2>
 
               <p key="food-philosophy-description" className="sub-heading">
                 At <b>Heavenstone Residency</b>, we believe that food is more

@@ -1,13 +1,11 @@
 export interface ContactFormData {
     name: string;
-    phone_number: string;
-    email: string;
     role: string;
-    country_code: string;
+    contact: string;
+    message: string;
 }
 
 export const sendContactForm = async (data: ContactFormData) => {
-
     try {
         const response = await fetch("/api/contact", {
             method: "POST",
@@ -19,6 +17,7 @@ export const sendContactForm = async (data: ContactFormData) => {
         });
 
         if (!response.ok) {
+            console.log('Error response received:', await response.text());
             throw new Error("Failed to send message");
         }
 
@@ -26,6 +25,6 @@ export const sendContactForm = async (data: ContactFormData) => {
         return result;
     } catch (error) {
         console.error("Error sending contact form:", error);
-        throw error; // Rethrow error for handling in calling function
+        throw error;
     }
 };

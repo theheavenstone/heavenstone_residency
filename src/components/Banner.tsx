@@ -35,8 +35,9 @@ export default function Banner() {
             <Image
               src={bannerImage}
               alt="Luxury Apartment"
-              fill
-              className="object-cover object-centers"
+              width={1920}
+              height={1080}
+              className="object-cover w-full h-full"
               priority
             />
           </motion.div>
@@ -51,10 +52,9 @@ export default function Banner() {
           >
             <div className="container mx-auto text-center">
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0.8 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 className="mb-4 font-extrabold  text-brand-dark text-4xl md:text-[50px] lg:text-6xl"
               >
                 Luxury Rental Apartments for Your Comfort

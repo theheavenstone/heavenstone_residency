@@ -54,4 +54,9 @@ html {
   }
   
   
-  
+  @font-face {
+    font-family: 'Inter';
+    src: url('/path-to-font.woff2') format('woff2'),
+         url('/path-to-font.woff') format('woff');
+    font-display: swap; /* Prevents reflow */
+  }

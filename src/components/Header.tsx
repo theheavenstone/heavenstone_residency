@@ -55,7 +55,7 @@ export default function Header() {
                 {" "}
                 <Image
                   src={Logo}
-                  alt="Heavenstone Residency"
+                  alt="logo"
                   width={42}
                   height={42}
                   className="relative bottom-1 w-auto h-auto object-cover"
@@ -74,64 +74,53 @@ export default function Header() {
             <Navbar.Toggle />
 
             <Navbar.Collapse>
-              <motion.div
-                key="navbar-links"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  ease: "easeOut",
-                }}
-                className="flex gap-0 md:gap-4  flex-col  md:flex-row"
+              <Navbar.Link
+                as={Link}
+                href="/"
+                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
               >
-                <Navbar.Link
-                  as={Link}
-                  href="/"
-                  className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-                >
-                  Home
-                </Navbar.Link>
+                Home
+              </Navbar.Link>
 
-                <Navbar.Link
-                  as={Link}
-                  href="/#apartments"
-                  onClick={(e) => handleServiceClick(e, "apartments")}
-                  className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-                >
-                  Apartments
-                </Navbar.Link>
+              <Navbar.Link
+                as={Link}
+                href="/#apartments"
+                onClick={(e) => handleServiceClick(e, "apartments")}
+                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+              >
+                Apartments
+              </Navbar.Link>
 
-                <Navbar.Link
-                  as={Link}
-                  href="/#dining"
-                  onClick={(e) => handleServiceClick(e, "dining")}
-                  className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-                >
-                  Kitchen
-                </Navbar.Link>
+              <Navbar.Link
+                as={Link}
+                href="/#dining"
+                onClick={(e) => handleServiceClick(e, "dining")}
+                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+              >
+                Kitchen
+              </Navbar.Link>
 
-                <Navbar.Link
-                  as={Link}
-                  href="/about"
-                  className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-                >
-                  About
-                </Navbar.Link>
+              <Navbar.Link
+                as={Link}
+                href="/about"
+                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+              >
+                About
+              </Navbar.Link>
 
-                <Navbar.Link
-                  as={Link}
-                  href="/contact"
-                  className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-                >
-                  Contact
-                </Navbar.Link>
-              </motion.div>
+              <Navbar.Link
+                as={Link}
+                href="/contact"
+                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+              >
+                Contact
+              </Navbar.Link>
 
               <div className="md:hidden gap-4 items-center">
                 <Navbar.Link
                   className="flex gap-2 items-center tracking-tight text-brand-dark hover:!text-blue-600 hover:underline transition-colors ease-in-out duration-300 lg:text-xl"
                   href="tel:+919447959544"
+                  aria-label="Call us at 9447959544"
                 >
                   <Icon icon="famicons:call-sharp" width="20" height="20" />{" "}
                   9447959544
@@ -140,6 +129,7 @@ export default function Header() {
                 <Navbar.Link
                   href="https://wa.me/919447959544"
                   className="flex gap-2 items-center tracking-tight lg:text-xl"
+                  aria-label="whatsapp icon"
                 >
                   <Icon icon="mdi:whatsapp" width="24" height="24" />
                   <span className="md:hidden text-brand-dark hover:!text-brand-light lg:text-xl">
@@ -153,6 +143,7 @@ export default function Header() {
               <Navbar.Link
                 className="flex gap-1 items-center tracking-tight text-brand-dark hover:!text-blue-600 hover:underline transition-colors ease-in-out duration-300 lg:text-xl"
                 href="tel:+919447959544"
+                aria-label="Call us at 9447959544"
               >
                 <Icon icon="famicons:call-sharp" width="20" height="20" />{" "}
                 9447959544
@@ -161,6 +152,7 @@ export default function Header() {
               <Navbar.Link
                 href="https://wa.me/919447959544"
                 className="flex gap-2 items-center tracking-tight lg:text-xl hover:!text-brand-light transition-colors ease-in-out duration-300"
+                aria-label="whatsapp icon"
               >
                 <Icon icon="mdi:whatsapp" width="24" height="24" />
                 <span className="md:hidden text-brand-dark hover:!text-brand-light lg:text-xl">
