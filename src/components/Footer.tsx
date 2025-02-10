@@ -75,19 +75,27 @@ export default function Footer() {
     {
       icon: "akar-icons:facebook-fill",
       url: "https://www.facebook.com/people/Heavenstone-Residency/61560117024575",
+      name: "Facebook",
     },
-    // { icon: "akar-icons:twitter-fill", url: "https://twitter.com/yourprofile" },
+    // {
+    //   icon: "akar-icons:twitter-fill",
+    //   url: "https://twitter.com/yourprofile",
+    //   name: "Twitter",
+    // },
     // {
     //   icon: "akar-icons:instagram-fill",
     //   url: "https://instagram.com/yourprofile",
+    //   name: "Instagram",
     // },
     // {
     //   icon: "akar-icons:linkedin-fill",
     //   url: "https://linkedin.com/in/yourprofile",
+    //   name: "Linkedin",
     // },
     {
       icon: "hugeicons:airbnb",
       url: "https://www.airbnb.co.in/rooms/1154626879906290509?viralityEntryPoint=1&s=76&source_impression_id=p3_1739118285_P38xu2Kd_oy4YJAa",
+      name: "Airbnb",
     },
   ];
 
@@ -147,7 +155,7 @@ export default function Footer() {
                     </p>
                     <div className=" mt-2 text-brand-light text-xl">
                       <div className="flex justify-center lg:justify-start gap-3 pt-4">
-                        {socialMediaLinks.map(({ icon, url }) => (
+                        {socialMediaLinks.map(({ icon, url, name }) => (
                           <motion.a
                             key={icon}
                             initial={{ opacity: 0, scale: 0.8 }}
@@ -158,7 +166,9 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-brand-light hover:text-primary-500 transition-all duration-300"
+                            aria-label={`Visit our ${name} page`}
                           >
+                            <span className="sr-only">{name}</span>
                             <Icon icon={icon} width={24} height={24} />
                           </motion.a>
                         ))}
@@ -233,6 +243,7 @@ export default function Footer() {
                           Role <Icon icon="mdi:required" />
                         </label>
                         <select
+                          id="role"
                           name="role"
                           className="w-full bg-brand-dark border-b border-brand-light rounded-lg p-2 text-brand-light appearance-none relative pr-10 cursor-pointer focus:outline-none focus:ring-0 "
                           value={values.role}
