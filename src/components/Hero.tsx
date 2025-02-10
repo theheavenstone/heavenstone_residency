@@ -288,7 +288,7 @@ export default function Hero() {
                       return (
                         <div
                           key={`carousel-slide-${index}`}
-                          className="bg-white h-full text-black rounded-xl  min-h-[300px]"
+                          className="bg-white h-auto text-black rounded-xl "
                         >
                           <Image
                             src={img}
