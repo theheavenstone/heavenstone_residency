@@ -72,7 +72,7 @@ export default function Hero() {
               >
                 <Image
                   src={Front}
-                  className="w-full h-80 rounded-xl"
+                  className="w-full aspect-[6/3] object-cover rounded-xl"
                   alt="Front view of the apartment"
                 />
               </motion.div>
@@ -233,8 +233,8 @@ export default function Hero() {
                     >
                       <Image
                         src={image}
-                        className="object-cover h-full w-full rounded-xl"
-                        alt="Living room & Bedroom feature image"
+                        className="w-full aspect-[4/3] object-cover rounded-xl"
+                        alt={`room-${index}`}
                       />
                     </motion.div>
                   ))}
@@ -292,9 +292,9 @@ export default function Hero() {
                         >
                           <Image
                             src={img}
-                            alt="carousel"
+                            alt={`${index}-carousel`}
                             priority={true}
-                            className="rounded-xl w-full h-80"
+                            className="rounded-xl w-full aspect-[4/3] object-cover"
                           />
                         </div>
                       );
