@@ -177,7 +177,7 @@ export default function Contact() {
                 <input
                   type="text"
                   name="name"
-                  className="w-full  border-b border-brand-mid  rounded-lg p-2 placeholder:text-brand-dark/60"
+                  className="w-full  border-b border-brand-mid text-brand-dark  rounded-lg p-2 placeholder:text-brand-dark/60"
                   placeholder="Enter your full name"
                   value={values.name}
                   onChange={handleChange}
