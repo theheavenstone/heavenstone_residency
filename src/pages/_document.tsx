@@ -7,6 +7,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta charSet="UTF-8" />
+        <meta property="og:image" content="/images/meta_img.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preload"
