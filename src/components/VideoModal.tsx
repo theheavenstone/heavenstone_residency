@@ -6,9 +6,10 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 interface VideoModalProps {
   videoSrc: string;
+  label: string;
 }
 
-const VideoModal: React.FC<VideoModalProps> = ({ videoSrc }) => {
+const VideoModal: React.FC<VideoModalProps> = ({ videoSrc, label }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [videoKey, setVideoKey] = useState(0);
 
@@ -23,7 +24,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoSrc }) => {
         onClick={() => setIsOpen(true)}
         className="bg-brand-dark text-brand-light hover:text-brand-dark hover:bg-brand-light transition-colors duration-500 ease-in-out inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg"
       >
-        Watch Now{" "}
+        {label}
         <Icon
           icon="solar:play-outline"
           className="ml-2"

@@ -89,7 +89,7 @@ export default function Hero() {
                   Quick Highlights
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 text-brand-mid place-items-start gap-0 md:gap-4 md:place-items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 text-brand-mid place-items-start gap-0 md:gap-4 md:place-items-center mb-3">
                   <motion.ul
                     key="hero-highlights-list-1"
                     initial="hidden"
@@ -164,6 +164,10 @@ export default function Hero() {
                     )}
                   </motion.ul>
                 </div>
+                <VideoModal
+                  videoSrc="Assets/intro_video.mp4"
+                  label="Quick Overview"
+                />
               </motion.div>
             </div>
 
@@ -190,7 +194,10 @@ export default function Hero() {
                   km away enjoy the perfect blend of upscale living and
                   convenience.
                 </p>
-                <VideoModal videoSrc="Assets/intro_video.mp4" />
+                <VideoModal
+                  label="Promo Video"
+                  videoSrc="Assets/promo_video.mp4"
+                />
               </motion.div>
 
               <motion.div
