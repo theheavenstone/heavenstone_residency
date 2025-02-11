@@ -47,7 +47,7 @@ export default function Banner() {
             key="banner-motion"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.2, ease: "easeIn" }}
             suppressHydrationWarning
             className="absolute flex flex-col justify-center h-full w-full mx-auto space-y-7 z-50 bg-black/10"
           >
@@ -55,9 +55,9 @@ export default function Banner() {
               <motion.h1
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
                 suppressHydrationWarning
-                className="mb-4 font-extrabold  text-brand-dark text-4xl md:text-[50px] lg:text-6xl"
+                className="mb-4 font-extrabold  text-brand-dark text-4xl md:text-5xl lg:text-6xl"
               >
                 Luxury Rental Apartments for Your Comfort
               </motion.h1>
@@ -65,7 +65,7 @@ export default function Banner() {
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
                 className="text-brand-dark mb-8 text-lg lg:text-2xl sm:px-16 xl:px-48 font-semibold min-h-[48px]"
                 suppressHydrationWarning
               >
@@ -75,7 +75,7 @@ export default function Banner() {
                 <motion.button
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  transition={{ duration: 0.3, ease: "easeIn" }}
                   suppressHydrationWarning
                   className="flex items-center gap-2 mx-auto  bg-brand-dark text-brand-light hover:text-brand-dark hover:bg-brand-light transition-colors duration-500 ease-in-out text-lg px-4 py-2 mt-4 rounded-lg"
                 >

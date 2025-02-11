@@ -85,7 +85,7 @@ export default function Header() {
           key="navbar-motion"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
           className="absolute top-0 left-0 w-full z-50 bg-white/30 backdrop-blur-md xl:backdrop-blur-none xl:shadow-none shadow-xl xl:bg-transparent"
         >
           <Navbar fluid theme={navTheme} className="container bg-transparent">
@@ -93,7 +93,7 @@ export default function Header() {
               <motion.div
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
                 viewport={{ once: true }}
                 className="self-center flex items-center whitespace-nowrap text-lg md:text-2xl font-semibold text-brand-dark uppercase"
               >

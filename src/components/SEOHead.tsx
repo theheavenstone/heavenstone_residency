@@ -30,7 +30,10 @@ export default function SEOHead() {
         property="og:description"
         content="Discover fully furnished luxury apartments & rooms for rent at Heavenstone Residency. Enjoy premium amenities and flexible rental options in Kochi."
       />
-      <meta property="og:image" content="/images/meta_img.jpg" />
+      <meta
+        property="og:image"
+        content="https://www.heavenstone.in/images/meta_img.jpg"
+      />
       <meta property="og:url" content="https://heavenstone.in" />
       <meta property="og:type" content="business.business" />
       <meta property="og:site_name" content="Heavenstone Residency" />
@@ -44,7 +47,10 @@ export default function SEOHead() {
         name="twitter:description"
         content="Find fully furnished apartments & rooms for rent at Heavenstone Residency. Modern amenities, short-term & long-term rental options available."
       />
-      <meta name="twitter:image" content="/images/meta_img.jpg" />
+      <meta
+        name="twitter:image"
+        content="https://www.heavenstone.in/images/meta_img.jpg"
+      />
       <meta name="twitter:site" content="@heavenstoneresidency" />
 
       <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -98,7 +104,7 @@ export default function SEOHead() {
           },
           priceRange: "$$$",
           hasMap: "https://maps.app.goo.gl/oEnyUJvRQjrAucT99",
-          image: "/images/meta_img.jpg",
+          image: "https://www.heavenstone.in/images/meta_img.jpg",
           amenities: [
             "call on doctor",
             "Family friendly",

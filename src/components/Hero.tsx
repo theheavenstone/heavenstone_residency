@@ -293,7 +293,9 @@ export default function Hero() {
                           <Image
                             src={img}
                             alt={`${index}-carousel`}
-                            priority={true}
+                            loading={index === 0 ? "eager" : "lazy"} // Load first image immediately
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                            quality={80} // Reduce file size
                             className="rounded-xl w-full aspect-[4/3] object-cover"
                           />
                         </div>

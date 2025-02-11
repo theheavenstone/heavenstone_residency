@@ -7,17 +7,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta charSet="UTF-8" />
-        <meta property="og:image" content="/images/meta_img.jpg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-          as="style"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-        />
       </Head>
       <body className="antialiased">
         <Main />
