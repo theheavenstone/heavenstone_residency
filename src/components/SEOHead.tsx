@@ -8,12 +8,12 @@ export default function SEOHead() {
       </title>
       <meta
         name="description"
-        content="Discover luxury apartments at Heavenstone Residency in Kochi. Perfect for families, corporates & remote workers seeking pet-friendly, serviced stays now."
+        content="Rent fully furnished luxury apartments in Kochi at Heavenstone Residency. Short & long-term stays, pet-friendly, corporate housing, and premium amenities."
       />
 
       <meta
         name="keywords"
-        content="Heavenstone Residency, luxury apartments Kochi, furnished rooms for rent, serviced apartments, short-term rentals, monthly rentals, long-term stays, family-friendly stays, pet-friendly apartments, corporate guest house, workcation, service apartment, business travel accommodations, extended stays, executive apartments, digital nomad housing, temporary housing, vacation rentals, hotel alternatives, fully furnished homes, premium stays in Kochi"
+        content="Luxury apartments Kochi, furnished rentals, serviced apartments, corporate stays, pet-friendly apartments, monthly rentals, business stays, short-term stays, extended stays, vacation rentals in Kochi, premium housing"
       />
 
       <meta name="author" content="Heavenstone Residency" />
@@ -73,15 +73,15 @@ export default function SEOHead() {
       />
       <link rel="manifest" href="/site.webmanifest" />
 
-      <link rel="canonical" href="https://heavenstone.in" />
+      <link rel="canonical" href="https://www.heavenstone.in" />
 
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ApartmentComplex",
           name: "Heavenstone Residency",
-          url: "https://heavenstone.in",
-          logo: "/public/meta-img",
+          url: "https://www.heavenstone.in",
+          logo: "https://www.heavenstone.in/images/meta_img.jpg",
           description:
             "Find luxury apartments for rent at Heavenstone Residency in Kochi. Fully furnished apartments with modern amenities for short-term and long-term stays.",
           address: {
@@ -106,17 +106,17 @@ export default function SEOHead() {
           hasMap: "https://maps.app.goo.gl/oEnyUJvRQjrAucT99",
           image: "https://www.heavenstone.in/images/meta_img.jpg",
           amenities: [
-            "call on doctor",
+            "Fully Furnished Apartments",
             "Family friendly",
-            "Pets Friendly",
+            "Pet-friendly apartments",
             "Free WiFi",
             "Air Conditioning",
             "Parking",
             "Housekeeping",
             "Laundry Services",
-            "Fully Furnished Apartments",
             "Kitchen Facilities",
             "Flexible Rental Options",
+            "Doctor on call",
           ],
         })}
       </script>
