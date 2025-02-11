@@ -29,16 +29,16 @@ export default function Hero() {
   const data = [Balcony, Bathroom, Bedroom, LivingRoom];
 
   const QuickHighlights = [
-    "On call doctor",
     "Fully furnished apartments",
     "High-speed 200Mbps WiFi",
     "Easy public transport access",
-    "Laundry Services on Request",
     "Pet friendly",
-    "Housekeeping",
+    "Laundry Services on Request",
     "Secure car parking",
     "Flexible stay options",
     "Gourmet dining plans",
+    "Housekeeping",
+    "On call doctor",
   ];
 
   return (

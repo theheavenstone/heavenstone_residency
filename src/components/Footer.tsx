@@ -94,7 +94,7 @@ export default function Footer() {
     // },
     {
       icon: "hugeicons:airbnb",
-      url: "https://www.airbnb.co.in/rooms/1154626879906290509?viralityEntryPoint=1&s=76&source_impression_id=p3_1739118285_P38xu2Kd_oy4YJAa",
+      url: "https://www.airbnb.co.in/users/show/577066250",
       name: "Airbnb",
     },
   ];

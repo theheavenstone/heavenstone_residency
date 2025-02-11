@@ -108,12 +108,13 @@ export default function Header() {
                   loading="eager"
                   suppressHydrationWarning
                 />
-                <p className="flex">
+                <p className="flex gap-1">
+                  <span>Heavenstone</span>
                   <Icon
-                    icon="mdi:copyright"
+                    icon="mingcute:registered-line"
                     className=" w-3 h-3 md:w-4 md:h-4"
                   />
-                  Heavenstone Residency
+                  <span>Residency</span>
                 </p>
               </motion.div>
             </Navbar.Brand>
