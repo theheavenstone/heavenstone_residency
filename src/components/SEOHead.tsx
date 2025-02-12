@@ -15,7 +15,10 @@ export default function SEOHead() {
         name="keywords"
         content="Luxury apartments Kochi, furnished rentals, serviced apartments, corporate stays, pet-friendly apartments, monthly rentals, business stays, short-term stays, extended stays, vacation rentals in Kochi, premium housing"
       />
-
+      <meta
+        name="google-site-verification"
+        content="VP_fjIlQyaoDo7OfJ7lxN6OWqXvpfGGXXvGaLopbjRM"
+      />
       <meta name="author" content="Heavenstone Residency" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="UTF-8" />
