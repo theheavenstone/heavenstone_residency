@@ -10,11 +10,6 @@
       <image:loc>https://www.heavenstone.in/images/front.webp</image:loc>
       <image:title>Front View of Heavenstone Residency</image:title>
     </image:image>
-    <video:video>
-      <video:content_loc>https://www.heavenstone.in/images/intro_video.mp4</video:content_loc>
-      <video:title>Welcome to Heavenstone Residency</video:title>
-      <video:description>Watch the introductory video of Heavenstone Residency.</video:description>
-    </video:video>
   </url>
 
   <url>
@@ -33,10 +28,8 @@
     <lastmod>2025-02-11T12:23:39.560Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.heavenstone.in/images/living_room2.webp</image:loc>
-      <image:title>Contact Heavenstone Residency</image:title>
-    </image:image>
+    <image:loc>https://www.heavenstone.in/images/living_room2.webp</image:loc>
+    <image:title>Contact Heavenstone Residency</image:title>
   </url>
 
 </urlset>

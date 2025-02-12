@@ -15,8 +15,6 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaAirbnb } from "react-icons/fa6";
 import { GoCheckCircle } from "react-icons/go";
 import { FaStarOfLife } from "react-icons/fa";
-// @ts-ignore
-import { FaInstagram } from "react-icons/fa";
 
 const initValues = {
   name: "",
