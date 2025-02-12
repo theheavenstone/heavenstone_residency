@@ -11,11 +11,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-import Front from "../../public/Assets/front.webp";
-import Balcony from "../../public/Assets/balcony2.webp";
-import Bathroom from "../../public/Assets/bathroom.webp";
-import Bedroom from "../../public/Assets/bedroom2.webp";
-import LivingRoom from "../../public/Assets/living_room2.webp";
 import VideoModal from "./VideoModal";
 
 import { IoCheckmark } from "react-icons/io5";
@@ -27,7 +22,12 @@ export default function Hero() {
     slidesToShow: 1,
     swipeToSlide: true,
   };
-  const data = [Balcony, Bathroom, Bedroom, LivingRoom];
+  const data = [
+    "/images/balcony2.webp",
+    "/images/bathroom.webp",
+    "/images/bedroom2.webp",
+    "/images/living_room2.webp",
+  ];
 
   const QuickHighlights = [
     "Fully furnished apartments",
@@ -72,7 +72,9 @@ export default function Hero() {
                 viewport={{ once: true }}
               >
                 <Image
-                  src={Front}
+                  src="/images/front.webp"
+                  width={800}
+                  height={480}
                   className="w-full aspect-[6/3] object-cover rounded-xl"
                   alt="Front view of the apartment"
                 />
@@ -220,26 +222,47 @@ export default function Hero() {
                     },
                   }}
                 >
-                  {[LivingRoom, Bedroom].map((image, index) => (
-                    <motion.div
-                      key={`hero-image-left-${index}`}
-                      className="h-[220px] w-[290px] sm:h-[180px] sm:w-[240px] xs:h-[150px] xs:w-[200px] mb-4"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.5,
-                        ease: "easeOut",
-                        delay: index * 0.2,
-                      }}
-                    >
-                      <Image
-                        src={image}
-                        className="w-full aspect-[4/3] object-cover rounded-xl"
-                        alt={`room-${index}`}
-                      />
-                    </motion.div>
-                  ))}
+                  <motion.div
+                    key="hero-image-top-left"
+                    className="h-[220px] w-[290px] sm:h-[180px] sm:w-[240px] xs:h-[150px] xs:w-[200px] mb-4"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 1 * 0.2,
+                    }}
+                  >
+                    <Image
+                      src="/images/bedroom2.webp"
+                      width={290}
+                      height={220}
+                      className="w-full aspect-[4/3] object-cover rounded-xl"
+                      alt="Bedroom feature image"
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    key="hero-image-bottom-left"
+                    className="h-[220px] w-[290px] sm:h-[180px] sm:w-[240px] xs:h-[150px] xs:w-[200px] mb-4"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 2 * 0.2,
+                    }}
+                  >
+                    <Image
+                      src="/images/living_room2.webp"
+                      width={290}
+                      height={220}
+                      className="w-full aspect-[4/3] object-cover rounded-xl"
+                      alt="Bedroom feature image"
+                    />
+                  </motion.div>
                 </motion.div>
 
                 <motion.div
@@ -260,26 +283,47 @@ export default function Hero() {
                     },
                   }}
                 >
-                  {[Balcony, Bathroom].map((image, index) => (
-                    <motion.div
-                      key={`hero-image-right-${index}`}
-                      className="h-[220px] w-[290px] sm:h-[180px] sm:w-[240px] xs:h-[150px] xs:w-[200px] mb-4"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.5,
-                        ease: "easeOut",
-                        delay: index * 0.2,
-                      }}
-                    >
-                      <Image
-                        src={image}
-                        className="object-cover h-full w-full rounded-xl"
-                        alt="Balcony & Bathroom feature image"
-                      />
-                    </motion.div>
-                  ))}
+                  <motion.div
+                    key="hero-image-top-right"
+                    className="h-[220px] w-[290px] sm:h-[180px] sm:w-[240px] xs:h-[150px] xs:w-[200px] mb-4"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 1 * 0.2,
+                    }}
+                  >
+                    <Image
+                      src="/images/balcony2.webp"
+                      width={290}
+                      height={220}
+                      className="object-cover h-full w-full rounded-xl"
+                      alt="Balcony feature image"
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    key="hero-image-bottom-right"
+                    className="h-[220px] w-[290px] sm:h-[180px] sm:w-[240px] xs:h-[150px] xs:w-[200px] mb-4"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 2 * 0.2,
+                    }}
+                  >
+                    <Image
+                      src="/images/bathroom.webp"
+                      width={290}
+                      height={220}
+                      className="object-cover h-full w-full rounded-xl"
+                      alt="Bathroom feature image"
+                    />
+                  </motion.div>
                 </motion.div>
               </motion.div>
 
@@ -294,10 +338,12 @@ export default function Hero() {
                         >
                           <Image
                             src={img}
+                            width={800}
+                            height={600}
                             alt={`${index}-carousel`}
-                            loading={index === 0 ? "eager" : "lazy"} // Load first image immediately
+                            loading={index === 0 ? "eager" : "lazy"}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                            quality={80} // Reduce file size
+                            quality={80}
                             className="rounded-xl w-full aspect-[4/3] object-cover"
                           />
                         </div>

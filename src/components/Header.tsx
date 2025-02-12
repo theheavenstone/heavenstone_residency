@@ -10,7 +10,6 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Logo from "../../public/Assets/Logo.webp";
 import Image from "next/image";
 
 import { FaRegRegistered } from "react-icons/fa6";
@@ -102,7 +101,7 @@ export default function Header() {
               >
                 {" "}
                 <Image
-                  src={Logo}
+                  src="/images/Logo.webp"
                   alt="logo"
                   width={42}
                   height={42}

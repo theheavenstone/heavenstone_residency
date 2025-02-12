@@ -7,7 +7,6 @@ import {
   LazyMotion,
   motion,
 } from "framer-motion";
-import bannerImage from "../../public/Assets/banner.webp";
 
 import { Libre_Baskerville } from "next/font/google";
 import Link from "next/link";
@@ -35,10 +34,12 @@ export default function Banner() {
             className="absolute inset-0"
           >
             <Image
-              src={bannerImage}
+              src="/images/banner.webp"
               alt="Luxury Apartment"
+              width={1920}
+              height={1080}
               className="object-cover w-full h-full"
-              priority
+              priority={true}
               loading="eager"
               suppressHydrationWarning
             />
