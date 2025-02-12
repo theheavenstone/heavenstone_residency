@@ -37,8 +37,8 @@ export default function SEOHead() {
         property="og:image"
         content="https://www.heavenstone.in/images/meta_img.jpg"
       />
-      <meta property="og:url" content="https://heavenstone.in" />
-      <meta property="og:type" content="business.business" />
+      <meta property="og:url" content="https://www.heavenstone.in/" />
+      <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Heavenstone Residency" />
 
       <meta name="twitter:card" content="summary_large_image" />
@@ -55,7 +55,7 @@ export default function SEOHead() {
         content="https://www.heavenstone.in/images/meta_img.jpg"
       />
       <meta name="twitter:site" content="@heavenstoneresidency" />
-
+      <meta name="twitter:url" content="https://www.heavenstone.in/" />
       <link rel="shortcut icon" href="/images/favicon.ico" />
       <link
         rel="apple-touch-icon"
