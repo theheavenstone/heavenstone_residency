@@ -11,7 +11,7 @@ import bannerImage from "../../public/Assets/banner.webp";
 
 import { Libre_Baskerville } from "next/font/google";
 import Link from "next/link";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 const montserrat = Libre_Baskerville({
   weight: "400",

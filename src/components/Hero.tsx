@@ -10,7 +10,7 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 import Front from "../../public/Assets/front.webp";
 import Balcony from "../../public/Assets/balcony2.webp";

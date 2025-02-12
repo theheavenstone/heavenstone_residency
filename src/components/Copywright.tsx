@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
