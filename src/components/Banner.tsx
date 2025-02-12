@@ -11,7 +11,8 @@ import bannerImage from "../../public/Assets/banner.webp";
 
 import { Libre_Baskerville } from "next/font/google";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
+
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const montserrat = Libre_Baskerville({
   weight: "400",
@@ -80,7 +81,7 @@ export default function Banner() {
                   className="flex items-center gap-2 mx-auto  bg-brand-dark text-brand-light hover:text-brand-dark hover:bg-brand-light transition-colors duration-500 ease-in-out text-lg px-4 py-2 mt-4 rounded-lg"
                 >
                   View our Apartments{" "}
-                  <Icon icon="mdi-light:arrow-right" className="w-6 h-6" />
+                  <FaArrowRightLong className="text-brand-light " />
                 </motion.button>
               </Link>
             </div>

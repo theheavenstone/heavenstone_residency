@@ -1,13 +1,16 @@
 "use client";
 
 import React from "react";
-import { Icon } from "@iconify/react";
 import {
   AnimatePresence,
   domAnimation,
   LazyMotion,
   motion,
 } from "framer-motion";
+
+import { TbAirConditioning } from "react-icons/tb";
+import { IoHomeOutline } from "react-icons/io5";
+import { IoCheckmark } from "react-icons/io5";
 
 export default function ApartmentsPage() {
   return (
@@ -71,14 +74,11 @@ export default function ApartmentsPage() {
                       }}
                     >
                       <p className="flex justify-center items-center gap-1 font-bold text-brand-light">
-                        <Icon
-                          icon={
-                            item.type === "AC"
-                              ? "mingcute:air-condition-open-fill"
-                              : "material-symbols-light:home-outline-rounded"
-                          }
-                          className="text-primary-500"
-                        />{" "}
+                        {item.type === "AC" ? (
+                          <TbAirConditioning className="text-brand-light" />
+                        ) : (
+                          <IoHomeOutline className="text-brand-light" />
+                        )}{" "}
                         {item.type}
                       </p>
                       <p className="font-bold text-brand-light text-center">
@@ -106,10 +106,7 @@ export default function ApartmentsPage() {
                         delay: index * 0.2,
                       }}
                     >
-                      <Icon
-                        icon="mdi-light:check"
-                        className="text-primary-500"
-                      />
+                      <IoCheckmark className="text-brand-dark" />
                       {feature}
                     </motion.li>
                   ))}
@@ -157,14 +154,11 @@ export default function ApartmentsPage() {
                       }}
                     >
                       <p className="flex justify-center items-center gap-1 font-bold text-brand-light">
-                        <Icon
-                          icon={
-                            item.type === "AC"
-                              ? "mingcute:air-condition-open-fill"
-                              : "material-symbols-light:home-outline-rounded"
-                          }
-                          className="text-primary-500"
-                        />{" "}
+                        {item.type === "AC" ? (
+                          <TbAirConditioning className="text-brand-light" />
+                        ) : (
+                          <IoHomeOutline className="text-brand-light" />
+                        )}{" "}
                         {item.type}
                       </p>
                       <p className="font-bold text-brand-light text-center">
@@ -192,10 +186,7 @@ export default function ApartmentsPage() {
                         delay: index * 0.2,
                       }}
                     >
-                      <Icon
-                        icon="mdi-light:check"
-                        className="text-primary-500"
-                      />
+                      <IoCheckmark className="text-brand-dark" />
                       {feature}
                     </motion.li>
                   ))}

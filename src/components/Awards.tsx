@@ -6,8 +6,10 @@ import {
   LazyMotion,
   motion,
 } from "framer-motion";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
+
+import { FaArrowRightLong } from "react-icons/fa6";
+import { IoRibbonOutline } from "react-icons/io5";
 
 export default function Awards() {
   return (
@@ -32,12 +34,7 @@ export default function Awards() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
             >
-              <Icon
-                icon="solar:medal-ribbons-star-linear"
-                width="60"
-                height="60"
-                className="text-yellow-500 mb-4"
-              />
+              <IoRibbonOutline size={60} className="text-yellow-500 mb-4" />
               <h3 className="text-2xl font-semibold text-brand-dark">
                 Airbnb Superhost
               </h3>
@@ -53,7 +50,7 @@ export default function Awards() {
                   className="bg-brand-dark text-brand-light hover:text-brand-dark hover:bg-brand-light transition-colors duration-500 ease-in-out text-base md:text-lg px-6 py-2 rounded-lg  font-semibold  flex items-center gap-2 shadow-md"
                 >
                   Book Now Through Airbnb
-                  <Icon icon="mdi-light:arrow-right" className="w-6 h-6" />
+                  <FaArrowRightLong className="text-brand-light " />
                 </Link>
               </div>
             </motion.div>
@@ -64,12 +61,7 @@ export default function Awards() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
             >
-              <Icon
-                icon="solar:medal-ribbons-star-linear"
-                width="60"
-                height="60"
-                className="text-yellow-500 mb-4"
-              />
+              <IoRibbonOutline size={60} className="text-yellow-500 mb-4" />
               <h3 className="text-2xl font-semibold text-brand-dark">
                 Best 5-Star Rated Stay
               </h3>
@@ -85,7 +77,7 @@ export default function Awards() {
                   className="bg-brand-dark text-brand-light hover:text-brand-dark hover:bg-brand-light transition-colors duration-500 ease-in-out text-base md:text-lg px-6 py-2 rounded-lg  font-semibold  flex items-center gap-2 shadow-md"
                 >
                   Direct Booking
-                  <Icon icon="mdi-light:arrow-right" className="w-6 h-6" />
+                  <FaArrowRightLong className="text-brand-light " />
                 </Link>
               </div>
             </motion.div>

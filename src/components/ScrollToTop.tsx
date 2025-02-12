@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Icon } from "@iconify/react";
+
+import { FaArrowUp } from "react-icons/fa";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,7 +37,7 @@ export default function ScrollToTop() {
       className="fixed bottom-6 right-6 bg-brand-mid text-brand-light p-1 md:p-3 rounded-full shadow-lg "
       aria-label="Scroll to top"
     >
-      <Icon icon="mdi:arrow-up" width="24" height="24" />
+      <FaArrowUp size={20} />
     </motion.button>
   );
 }

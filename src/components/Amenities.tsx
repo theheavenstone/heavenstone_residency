@@ -1,6 +1,5 @@
 "use client";
 
-import { Icon } from "@iconify/react";
 import React from "react";
 import {
   AnimatePresence,
@@ -8,63 +7,114 @@ import {
   LazyMotion,
   motion,
 } from "framer-motion";
+import { MdSmartToy } from "react-icons/md";
+import { FaWifi } from "react-icons/fa";
+import { FaTv } from "react-icons/fa";
+import { GiSofa } from "react-icons/gi";
+import { MdLocalDining } from "react-icons/md";
+
+import { FaKitchenSet } from "react-icons/fa6";
+import { GiCookingPot } from "react-icons/gi";
+import { LuCookingPot } from "react-icons/lu";
+import { BiSolidFridge } from "react-icons/bi";
+import { GiGasStove } from "react-icons/gi";
+
+import { TbAirConditioning } from "react-icons/tb";
+import { FaShower } from "react-icons/fa6";
+import { MdOutlineBalcony } from "react-icons/md";
+import { GiVacuumCleaner } from "react-icons/gi";
+
+import { FaBed } from "react-icons/fa";
+import { GiWashingMachine } from "react-icons/gi";
+import { MdIron } from "react-icons/md";
+import { MdLocalLaundryService } from "react-icons/md";
 
 export default function Amenities() {
   const amenities = [
     {
       title: "Entertainment",
-      icon: "material-symbols:smart-toy",
+      icon: <MdSmartToy size={30} className="text-brand-dark" />,
       features: [
-        { icon: "material-symbols:tv-outline", text: "Full HD Smart TV" },
         {
-          icon: "material-symbols:wifi-rounded",
+          icon: <FaWifi size={20} className="text-brand-dark" />,
+          text: "Full HD Smart TV",
+        },
+        {
+          icon: <FaTv size={20} className="text-brand-dark" />,
           text: "High-speed 200Mbps WiFi",
         },
-        { icon: "mdi:sofa-outline", text: "Comfortable sofa seating" },
         {
-          icon: "material-symbols:dining-outline-rounded",
+          icon: <GiSofa size={20} className="text-brand-dark" />,
+          text: "Comfortable sofa seating",
+        },
+        {
+          icon: <MdLocalDining size={20} className="text-brand-dark" />,
           text: "Modern dining area",
         },
       ],
     },
     {
       title: "Kitchen",
-      icon: "cbi:kitchen",
+      icon: <FaKitchenSet size={20} className="text-brand-dark" />,
       features: [
-        { icon: "cbi:kitchen-alt", text: "Fully equipped modern kitchen" },
         {
-          icon: "fa6-solid:kitchen-set",
+          icon: <GiCookingPot size={20} className="text-brand-dark" />,
+          text: "Fully equipped  kitchen",
+        },
+        {
+          icon: <LuCookingPot size={20} className="text-brand-dark" />,
           text: "Quality cookware and utensils",
         },
         {
-          icon: "material-symbols:kitchen-outline",
+          icon: <BiSolidFridge size={20} className="text-brand-dark" />,
           text: "Premium refrigerator",
         },
-        { icon: "hugeicons:gas-stove", text: "Electric stove" },
+        {
+          icon: <GiGasStove size={20} className="text-brand-dark" />,
+          text: "Electric stove",
+        },
       ],
     },
     {
       title: "Essential Comforts",
-      icon: "material-symbols:smart-toy",
+      icon: <MdSmartToy size={20} className="text-brand-dark" />,
       features: [
         {
-          icon: "mingcute:air-condition-line",
+          icon: <TbAirConditioning size={20} className="text-brand-dark" />,
           text: "Air conditioning (in AC units)",
         },
-        { icon: "ep:hot-water", text: "Hot water system" },
-        { icon: "iconoir:balcony", text: "Private balcony" },
-        { icon: "hugeicons:clean", text: "Weekly housekeeping service" },
+        {
+          icon: <FaShower size={20} className="text-brand-dark" />,
+          text: "Hot water system",
+        },
+        {
+          icon: <MdOutlineBalcony size={20} className="text-brand-dark" />,
+          text: "Private balcony",
+        },
+        {
+          icon: <GiVacuumCleaner size={20} className="text-brand-dark" />,
+          text: "Weekly housekeeping service",
+        },
       ],
     },
     {
       title: "Additional Conveniences",
-      icon: "material-symbols:smart-toy",
+      icon: <MdSmartToy size={20} className="text-brand-dark" />,
       features: [
-        { icon: "emojione-monotone:bed", text: "Fresh bedsheet change" },
-        { icon: "mdi:washing-machine", text: "Washing machine access" },
-        { icon: "material-symbols:iron-outline", text: "Iron box available" },
         {
-          icon: "material-symbols:laundry-outline",
+          icon: <FaBed size={20} className="text-brand-dark" />,
+          text: "Fresh bedsheet change",
+        },
+        {
+          icon: <GiWashingMachine size={20} className="text-brand-dark" />,
+          text: "Washing machine access",
+        },
+        {
+          icon: <MdIron size={20} className="text-brand-dark" />,
+          text: "Iron box available",
+        },
+        {
+          icon: <MdLocalLaundryService size={20} className="text-brand-dark" />,
           text: "Laundry service (on request)",
         },
       ],
@@ -124,10 +174,7 @@ export default function Amenities() {
                     className="bg-brand-light/55 backdrop-blur-lg rounded-xl p-5"
                   >
                     <div className="flex justify-center items-center mb-4 bg-primary-100 rounded dark:bg-primary-900">
-                      <Icon
-                        icon={item.icon}
-                        className="w-5 h-5 text-brand-dark lg:w-8 lg:h-8"
-                      />
+                      {item.icon}
                     </div>
                     <h2 className="mb-2 text-xl text-center font-bold text-brand-dark">
                       {item.title}
@@ -148,10 +195,7 @@ export default function Amenities() {
                           }}
                           className="flex items-center gap-1 justify-start"
                         >
-                          <Icon
-                            icon={feature.icon}
-                            className="text-primary-500"
-                          />
+                          {feature.icon}
                           {feature.text}
                         </motion.li>
                       ))}

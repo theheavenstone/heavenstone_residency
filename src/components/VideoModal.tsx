@@ -2,7 +2,9 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Icon } from "@iconify/react";
+
+import { IoPlayOutline } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 interface VideoModalProps {
   videoSrc: string;
@@ -25,12 +27,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoSrc, label }) => {
         className="bg-brand-dark text-brand-light hover:text-brand-dark hover:bg-brand-light transition-colors duration-500 ease-in-out inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg"
       >
         {label}
-        <Icon
-          icon="solar:play-outline"
-          className="ml-2"
-          width="20"
-          height="20"
-        />
+        <IoPlayOutline size={20} className="ml-2" />
       </button>
 
       {isOpen && (
@@ -44,7 +41,6 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoSrc, label }) => {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="relative bg-black rounded-lg p-2 max-w-3xl w-full"
           >
-            {/* Close Button */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -52,10 +48,9 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoSrc, label }) => {
               }}
               className="absolute top-2 right-2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600 cursor-pointer z-50"
             >
-              <Icon icon="mingcute:close-fill" width="24" height="24" />
+              <IoClose size={24} />
             </button>
 
-            {/* Video Content */}
             <div className="w-full h-[400px] flex justify-center items-center">
               <video
                 key={videoKey}

@@ -1,9 +1,13 @@
 "use client";
 import Copywright from "@/components/Copywright";
 import { sendContactForm } from "../../lib/api";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import { Spinner } from "flowbite-react";
 import React, { useState } from "react";
+
+import { FaFacebookF } from "react-icons/fa";
+import { FaAirbnb } from "react-icons/fa6";
+import { GoCheckCircle } from "react-icons/go";
+import { FaStarOfLife } from "react-icons/fa";
 
 const initValues = {
   name: "",
@@ -66,21 +70,19 @@ export default function Contact() {
 
   const socialMediaLinks = [
     {
-      icon: "akar-icons:facebook-fill",
+      icon: <FaFacebookF className="text-2xl" />,
       url: "https://www.facebook.com/people/Heavenstone-Residency/61560117024575",
+      name: "Facebook",
     },
-    // { icon: "akar-icons:twitter-fill", url: "https://twitter.com/yourprofile" },
     // {
-    //   icon: "akar-icons:instagram-fill",
+    //   icon: <FaInstagram className="text-2xl" />,
     //   url: "https://instagram.com/yourprofile",
-    // },
-    // {
-    //   icon: "akar-icons:linkedin-fill",
-    //   url: "https://linkedin.com/in/yourprofile",
+    //   name: "Instagram",
     // },
     {
-      icon: "hugeicons:airbnb",
-      url: "https://www.airbnb.co.in/rooms/1154626879906290509?viralityEntryPoint=1&s=76&source_impression_id=p3_1739118285_P38xu2Kd_oy4YJAa",
+      icon: <FaAirbnb className="text-2xl" />,
+      url: "https://www.airbnb.co.in/users/show/577066250",
+      name: "Airbnb",
     },
   ];
   return (
@@ -132,12 +134,12 @@ export default function Contact() {
                 <div className="flex justify-center lg:justify-start gap-3 pt-4">
                   {socialMediaLinks.map(({ icon, url }) => (
                     <a
-                      key={icon}
+                      key={url}
                       href={url}
                       target="_blank"
                       className="text-brand-dark hover:text-brand-light transition-all duration-300"
                     >
-                      <Icon icon={icon} width={24} height={24} />
+                      {icon}
                     </a>
                   ))}
                 </div>
@@ -154,11 +156,7 @@ export default function Contact() {
             {status && (
               <div className="flex justify-center items-center gap-2 text-xl font-semibold text-center text-brand-dark">
                 <p>{status}</p>
-                <Icon
-                  icon="teenyicons:tick-circle-outline"
-                  width="18"
-                  height="18"
-                />
+                <GoCheckCircle className="text-brand-dark" />
               </div>
             )}
 
@@ -172,7 +170,7 @@ export default function Contact() {
                   htmlFor=""
                   className="flex items-center gap-1 text-brand-dark"
                 >
-                  Name <Icon icon="mdi:required" />
+                  Name <FaStarOfLife size={8} />
                 </label>
                 <input
                   type="text"
@@ -190,7 +188,7 @@ export default function Contact() {
                   htmlFor="role"
                   className="flex items-center gap-1 text-brand-dark"
                 >
-                  Role <Icon icon="mdi:required" />
+                  Role <FaStarOfLife size={8} />
                 </label>
                 <select
                   id="role"
@@ -223,7 +221,7 @@ export default function Contact() {
                   htmlFor="phone_number"
                   className="flex items-center gap-1 text-brand-dark"
                 >
-                  Email or Phone Number <Icon icon="mdi:required" />
+                  Email or Phone Number <FaStarOfLife size={8} />
                 </label>
 
                 <input

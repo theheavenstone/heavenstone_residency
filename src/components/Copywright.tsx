@@ -1,7 +1,8 @@
-import { Icon } from "@iconify/react";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+
+import { FaRegCopyright } from "react-icons/fa";
 
 export default function Copywright({ color }: { color: string }) {
   return (
@@ -14,12 +15,7 @@ export default function Copywright({ color }: { color: string }) {
       <hr className="border-brand-dark" />
       <div className="py-4 text-center">
         <p className={`${color} text-sm text-center`}>
-          <Icon
-            icon="mdi:copyright"
-            width="14"
-            height="14"
-            className="inline-block"
-          />{" "}
+          <FaRegCopyright className="inline-block mr-0.5" />
           {new Date().getFullYear()}{" "}
           <Link href="/" className="hover:underline font-semibold">
             Heavenstone Residency

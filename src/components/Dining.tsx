@@ -1,5 +1,5 @@
 "use client";
-import { Icon } from "@iconify/react";
+
 import React from "react";
 import {
   AnimatePresence,
@@ -7,6 +7,9 @@ import {
   LazyMotion,
   motion,
 } from "framer-motion";
+
+import { IoCheckmark } from "react-icons/io5";
+import { GoDotFill } from "react-icons/go";
 
 export default function Dining() {
   return (
@@ -119,10 +122,7 @@ export default function Dining() {
                         }}
                         className="flex items-center gap-2 text-base"
                       >
-                        <Icon
-                          icon="mdi-light:check"
-                          className="shrink-0  text-brand-dark"
-                        />
+                        <IoCheckmark className="text-brand-dark" />
                         {feature}
                       </motion.li>
                     ))}
@@ -183,7 +183,7 @@ export default function Dining() {
                   }}
                   className="flex gap-1 items-center text-lg"
                 >
-                  <Icon icon="octicon:dot-16" className="text-primary-500" />
+                  <GoDotFill className="text-brand-dark" />
                   {item}
                 </motion.li>
               ))}

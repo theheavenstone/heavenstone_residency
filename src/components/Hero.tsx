@@ -10,7 +10,6 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Icon } from "@iconify/react";
 
 import Front from "../../public/Assets/front.webp";
 import Balcony from "../../public/Assets/balcony2.webp";
@@ -18,6 +17,8 @@ import Bathroom from "../../public/Assets/bathroom.webp";
 import Bedroom from "../../public/Assets/bedroom2.webp";
 import LivingRoom from "../../public/Assets/living_room2.webp";
 import VideoModal from "./VideoModal";
+
+import { IoCheckmark } from "react-icons/io5";
 
 export default function Hero() {
   const settings = {
@@ -117,10 +118,7 @@ export default function Hero() {
                           },
                         }}
                       >
-                        <Icon
-                          icon="mdi-light:check"
-                          className="text-primary-500"
-                        />{" "}
+                        <IoCheckmark className="text-brand-dark" />
                         {highlight}
                       </motion.li>
                     ))}
@@ -154,10 +152,7 @@ export default function Hero() {
                             },
                           }}
                         >
-                          <Icon
-                            icon="mdi-light:check"
-                            className="text-primary-500"
-                          />{" "}
+                          <IoCheckmark className="text-brand-dark" />
                           {highlight}
                         </motion.li>
                       )
@@ -165,7 +160,7 @@ export default function Hero() {
                   </motion.ul>
                 </div>
                 <VideoModal
-                  videoSrc="Assets/intro_video.mp4"
+                  videoSrc="images/intro_video.mp4"
                   label="Quick Overview"
                 />
               </motion.div>
