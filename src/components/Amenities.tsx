@@ -173,7 +173,7 @@ export default function Amenities() {
                     }}
                     className="bg-brand-light/55 backdrop-blur-lg rounded-xl p-5"
                   >
-                    <div className="flex justify-center items-center mb-4 bg-primary-100 rounded dark:bg-primary-900">
+                    <div className="flex justify-center items-center mb-4 bg-primary-100 rounded">
                       {item.icon}
                     </div>
                     <h2 className="mb-2 text-xl text-center font-bold text-brand-dark">

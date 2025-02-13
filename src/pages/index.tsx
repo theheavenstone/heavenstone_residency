@@ -1,3 +1,5 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -12,6 +14,7 @@ const Amenities = dynamic(() => import("@/components/Amenities"), {
 const Dining = dynamic(() => import("@/components/Dining"), { ssr: false });
 const Awards = dynamic(() => import("@/components/Awards"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
+const Gallery = dynamic(() => import("@/components/Gallery"), { ssr: false });
 
 export default function Home() {
   return (
@@ -21,6 +24,7 @@ export default function Home() {
       <Apartment />
       <Amenities />
       <Dining />
+      <Gallery />
       <Awards />
       <Footer />
       <ScrollToTop />

@@ -35,7 +35,7 @@ export default function Header() {
   };
   const navTheme = {
     root: {
-      base: "bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4",
+      base: "bg-white px-2 py-2.5 sm:px-4",
       rounded: {
         on: "rounded",
         off: "",
@@ -66,16 +66,16 @@ export default function Header() {
     link: {
       base: "block py-2 pl-3 pr-4 xl:p-0",
       active: {
-        on: "bg-cyan-700 text-white dark:text-white xl:bg-transparent xl:text-cyan-700",
-        off: "border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white xl:border-0 xl:hover:bg-transparent xl:hover:text-cyan-700 xl:dark:hover:bg-transparent xl:dark:hover:text-white",
+        on: "bg-cyan-700 text-white  xl:bg-transparent xl:text-cyan-700",
+        off: "border-b border-gray-100 text-gray-700 hover:bg-gray-50 xl:border-0 xl:hover:bg-transparent xl:hover:text-cyan-700 ",
       },
       disabled: {
-        on: "text-gray-400 hover:cursor-not-allowed dark:text-gray-600",
+        on: "text-gray-400 hover:cursor-not-allowed",
         off: "",
       },
     },
     toggle: {
-      base: "inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 xl:hidden",
+      base: "inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 xl:hidden",
       icon: "h-6 w-6 shrink-0",
     },
   };
@@ -90,7 +90,11 @@ export default function Header() {
           transition={{ duration: 0.3, ease: "easeIn" }}
           className="absolute top-0 left-0 w-full z-50 bg-white/30 backdrop-blur-md xl:backdrop-blur-none xl:shadow-none shadow-xl xl:bg-transparent"
         >
-          <Navbar fluid theme={navTheme} className="container bg-transparent">
+          <Navbar
+            fluid
+            theme={navTheme}
+            className="xl:container bg-transparent"
+          >
             <Navbar.Brand href="/">
               <motion.div
                 initial={{ opacity: 0, x: -10 }}
@@ -146,6 +150,15 @@ export default function Header() {
                 className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
               >
                 Kitchen
+              </Navbar.Link>
+
+              <Navbar.Link
+                as={Link}
+                href="/#gallery"
+                onClick={(e) => handleServiceClick(e, "gallery")}
+                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+              >
+                Gallery
               </Navbar.Link>
 
               <Navbar.Link

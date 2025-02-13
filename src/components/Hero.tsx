@@ -23,10 +23,10 @@ export default function Hero() {
     swipeToSlide: true,
   };
   const data = [
-    "/images/balcony2.webp",
-    "/images/bathroom.webp",
-    "/images/bedroom2.webp",
-    "/images/living_room2.webp",
+    "/images/stair.jpg",
+    "/images/living_area.jpg",
+    "/images/kitchen1.jpg",
+    "/images/bedroom.jpg",
   ];
 
   const QuickHighlights = [
@@ -86,7 +86,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
                 viewport={{ once: true }}
                 key="hero-highlights"
-                className="text-gray-500 sm:text-lg dark:text-gray-400 flex flex-col justify-center items-center"
+                className="text-brand-dark sm:text-lg  flex flex-col justify-center items-center"
               >
                 <h2 key="hero-highlights-title" className="heading-1">
                   Quick Highlights
@@ -175,7 +175,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
                 viewport={{ once: true }}
                 key="hero-image-1"
-                className="text-gray-500 sm:text-lg dark:text-gray-400 flex flex-col justify-center items-center order-2 xl:order-1"
+                className="text-brand-dark sm:text-lg  flex flex-col justify-center items-center order-2 xl:order-1"
               >
                 <h2 className="heading">
                   Premium Living in Vadutala, Kochi | Heavenstone Residency
@@ -235,7 +235,7 @@ export default function Hero() {
                     }}
                   >
                     <Image
-                      src="/images/bedroom2.webp"
+                      src="/images/stair.jpg"
                       width={290}
                       height={220}
                       className="w-full aspect-[4/3] object-cover rounded-xl"
@@ -256,7 +256,7 @@ export default function Hero() {
                     }}
                   >
                     <Image
-                      src="/images/living_room2.webp"
+                      src="/images/living_area.jpg"
                       width={290}
                       height={220}
                       className="w-full aspect-[4/3] object-cover rounded-xl"
@@ -317,7 +317,7 @@ export default function Hero() {
                     }}
                   >
                     <Image
-                      src="/images/bathroom.webp"
+                      src="/images/kitchen1.jpg"
                       width={290}
                       height={220}
                       className="object-cover h-full w-full rounded-xl"

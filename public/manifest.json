@@ -2,7 +2,7 @@
    "name": "Heavenstone Residency",
    "short_name": "Heavenstone",
    "description": "Find luxury apartments for rent at Heavenstone Residency in Kochi. Fully furnished apartments with modern amenities for short-term and long-term stays.",
-   "start_url": "https://www.heavenstone.in/",
+   "start_url": "/",
    "scope": "/",
    "display": "standalone",
    "background_color": "#ffffff",
