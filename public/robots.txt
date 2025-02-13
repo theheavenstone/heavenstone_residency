@@ -1,9 +1,17 @@
-# *
+# Allow all search engines to crawl the entire site
 User-agent: *
 Allow: /
 
-# Host
+# Allow favicon, manifest, and icons for proper indexing
+Allow: /favicon.ico
+Allow: /android-icon-192x192.png
+Allow: /android-icon-144x144.png
+Allow: /manifest.json
+Allow: /apple-icon-180x180.png
+Allow: /images
+
+# Specify the preferred domain
 Host: https://www.heavenstone.in
 
-# Sitemaps
+# Sitemap for search engines
 Sitemap: https://www.heavenstone.in/sitemap.xml

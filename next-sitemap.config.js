@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
     siteUrl: 'https://www.heavenstone.in',
-    generateRobotsTxt: true,
+    generateRobotsTxt: false,
     outDir: 'public',
 };
