@@ -37,6 +37,8 @@ export default function SEOHead() {
         property="og:image"
         content="https://www.heavenstone.in/images/meta_img.jpg"
       />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:url" content="https://www.heavenstone.in/" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Heavenstone Residency" />
@@ -55,24 +57,28 @@ export default function SEOHead() {
         content="https://www.heavenstone.in/images/meta_img.jpg"
       />
       <meta name="twitter:site" content="@heavenstoneresidency" />
+      <meta
+        name="twitter:image:alt"
+        content="Luxury apartment at Heavenstone Residency in Kochi"
+      />
       <meta name="twitter:url" content="https://www.heavenstone.in/" />
-      <link rel="shortcut icon" href="/images/favicon.ico" />
+      <link rel="shortcut icon" href="/favicon.ico" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="/images/apple-touch-icon.png"
+        href="/apple-touch-icon.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/images/favicon-32x32.png"
+        href="/favicon-32x32.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/images/favicon-16x16.png"
+        href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
 
@@ -84,7 +90,7 @@ export default function SEOHead() {
           "@type": "ApartmentComplex",
           name: "Heavenstone Residency",
           url: "https://www.heavenstone.in",
-          logo: "https://www.heavenstone.in/images/meta_img.jpg",
+          logo: "https://www.heavenstone.in/favicon-32x32.png",
           description:
             "Find luxury apartments for rent at Heavenstone Residency in Kochi. Fully furnished apartments with modern amenities for short-term and long-term stays.",
           address: {
