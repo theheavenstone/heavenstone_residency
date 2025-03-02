@@ -8,8 +8,6 @@ import {
   motion,
 } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/router";
-
 import Image from "next/image";
 
 import { FaRegRegistered } from "react-icons/fa6";
@@ -17,22 +15,6 @@ import { IoCallSharp } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Header() {
-  const router = useRouter();
-
-  const handleServiceClick = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    sectionId: string
-  ) => {
-    e.preventDefault();
-
-    if (router.pathname === "/") {
-      document
-        .getElementById(sectionId)
-        ?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      router.push(`/#${sectionId}`);
-    }
-  };
   const navTheme = {
     root: {
       base: "bg-white px-2 py-2.5 sm:px-4",
@@ -93,7 +75,7 @@ export default function Header() {
           <Navbar
             fluid
             theme={navTheme}
-            className="xl:container bg-transparent"
+            className="px-0 xl:px-10 bg-transparent"
           >
             <Navbar.Brand href="/">
               <motion.div
@@ -137,7 +119,6 @@ export default function Header() {
               <Navbar.Link
                 as={Link}
                 href="/#apartments"
-                onClick={(e) => handleServiceClick(e, "apartments")}
                 className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
               >
                 Apartments
@@ -145,8 +126,15 @@ export default function Header() {
 
               <Navbar.Link
                 as={Link}
+                href="/#gallery"
+                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+              >
+                Gallery
+              </Navbar.Link>
+
+              <Navbar.Link
+                as={Link}
                 href="/#dining"
-                onClick={(e) => handleServiceClick(e, "dining")}
                 className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
               >
                 Kitchen
@@ -154,11 +142,10 @@ export default function Header() {
 
               <Navbar.Link
                 as={Link}
-                href="/#gallery"
-                onClick={(e) => handleServiceClick(e, "gallery")}
+                href="/tourism"
                 className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
               >
-                Gallery
+                Tourism
               </Navbar.Link>
 
               <Navbar.Link

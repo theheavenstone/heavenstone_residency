@@ -1,6 +1,6 @@
 "use client";
 import Copywright from "@/components/Copywright";
-import { sendContactForm } from "../../lib/api";
+import { sendContactForm } from "../lib/api";
 import { Spinner } from "flowbite-react";
 import React, { useState } from "react";
 
@@ -104,8 +104,13 @@ export default function Contact() {
               <p className="font-semibold">
                 Heavenstone Ln, Vaduthala, Kochi, Kerala 682012, India
               </p>
-              <p className="font-semibold pb-2">
+              <p className="font-semibold">
                 <a href="tel:+919447959544">+91 9447959544</a>
+              </p>
+              <p className="font-semibold pb-2">
+                <a href="mailto:theheavenstone@gmail.com?subject=Inquiry&body=Hello, I would like more information about your services.">
+                  theheavenstone@gmail.com
+                </a>
               </p>
               <div className="text-center bg-[#EEEE] rounded-xl h-full w-full xl:w-1/2">
                 <iframe

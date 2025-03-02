@@ -120,8 +120,13 @@ export default function Footer() {
                     <p className="font-semibold">
                       Heavenstone Ln, Vaduthala, Kochi, Kerala 682012, India
                     </p>
-                    <p className="font-semibold pb-2 hover:!text-blue-600  transition-colors duration-300">
+                    <p className="font-semibold hover:!text-blue-600  transition-colors duration-300">
                       <a href="tel:+919447959544">+91 9447959544</a>
+                    </p>
+                    <p className="font-semibold pb-2 hover:!text-blue-600  transition-colors duration-300">
+                      <a href="mailto:theheavenstone@gmail.com?subject=Inquiry&body=Hello, I would like more information about your services.">
+                        theheavenstone@gmail.com
+                      </a>
                     </p>
                     <div className="text-center bg-brand-mid rounded-xl h-full w-full xl:w-1/2">
                       <iframe
