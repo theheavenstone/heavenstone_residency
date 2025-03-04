@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/Header";
+import ChatBot from "@/components/ChatBot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Heavenstone Residency | Premium Apartments for Rent in Kochi",
+  title: "Heavenstone | Premium Apartments & Tourism in Kochi",
   description:
-    "Rent fully furnished luxury apartments in Kochi at Heavenstone Residency. Short & long-term stays, pet-friendly, corporate housing, and premium amenities.",
+    "Rent fully furnished luxury apartments in Kochi at Heavenstone. Short & long-term stays, pet-friendly, corporate housing, premium amenities, guided tourism, and exclusive Kerala travel packages.",
   keywords: [
     "Luxury apartments Kochi",
     "furnished rentals",
@@ -32,11 +33,18 @@ export const metadata: Metadata = {
     "vacation rentals in Kochi",
     "premium housing",
     "service apartments in kochi",
+    "Kochi tourism",
+    "tourist places in Kochi",
+    "things to do in Kochi",
+    "best places to visit in Kochi",
+    "Kochi city travel guide",
+    "Kathakali dance performances",
+    "customized Kerala tours",
   ],
   robots: "index, follow",
   metadataBase: new URL("https://www.heavenstone.in"),
   openGraph: {
-    title: "Heavenstone Residency | Luxury Apartment & Room Rentals in Kochi",
+    title: "Heavenstone | Luxury Apartments & Tourism in Kochi",
     description:
       "Discover fully furnished luxury apartments & rooms for rent at Heavenstone Residency. Enjoy premium amenities and flexible rental options in Kochi.",
     url: "https://www.heavenstone.in",
@@ -46,16 +54,16 @@ export const metadata: Metadata = {
         url: "https://www.heavenstone.in/images/meta_img.jpg",
         width: 1200,
         height: 630,
-        alt: "Luxury apartment at Heavenstone Residency in Kochi",
+        alt: "Luxury apartments & tourism packages at Heavenstone in Kochi",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Heavenstone Residency | Luxury Apartment & Room Rentals in Kochi",
+    title: "Heavenstone | Luxury Apartments & Tourism in Kochi",
     description:
-      "Find fully furnished apartments & rooms for rent at Heavenstone Residency. Modern amenities, short-term & long-term rental options available.",
+      "Book luxury apartments at Heavenstone Residency and explore Kochi with customized travel packages, and guided tours.",
     images: ["https://www.heavenstone.in/images/meta_img.jpg"],
     site: "@heavenstoneresidency",
   },
@@ -85,6 +93,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <ChatBot />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -5,6 +5,7 @@ import { IoMdClose, IoMdSend } from "react-icons/io";
 import { FiMessageCircle } from "react-icons/fi";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import { motion } from "framer-motion";
 
 const responses: { [key: string]: string } = {
   hi: "👋 Hello! How can I assist you with **Heavenstone** today?",
@@ -45,6 +46,11 @@ const responses: { [key: string]: string } = {
 
   initial:
     "Hello! I'm here to assist you with Heavenstone Residency. Feel free to ask about our apartments, amenities, pricing, location, tourism, or packages. 😊",
+};
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1 } },
 };
 
 export default function ChatBot() {
@@ -106,7 +112,12 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 flex flex-col items-end">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="fixed bottom-4 right-4 flex flex-col items-end"
+    >
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
@@ -212,6 +223,6 @@ export default function ChatBot() {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
