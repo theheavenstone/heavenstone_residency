@@ -99,8 +99,6 @@ export default function Header() {
                 <p className="flex gap-1">
                   <span>Heavenstone</span>
                   <FaRegRegistered size={15} />
-
-                  <span>Residency</span>
                 </p>
               </motion.div>
             </Navbar.Brand>

@@ -2,6 +2,7 @@ import Amenities from "@/components/Amenities";
 import ApartmentsPage from "@/components/Apartments";
 import Awards from "@/components/Awards";
 import Banner from "@/components/Banner";
+import ChatBot from "@/components/ChatBot";
 import Dining from "@/components/Dining";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
@@ -19,6 +20,7 @@ export default function Home() {
       <Gallery />
       <Awards />
       <Footer />
+      <ChatBot />
       <ScrollToTop />
     </div>
   );

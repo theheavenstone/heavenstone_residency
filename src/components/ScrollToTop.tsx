@@ -34,7 +34,7 @@ export default function ScrollToTop() {
       animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
       transition={{ duration: 0.5 }}
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 bg-brand-mid text-brand-light p-1 md:p-3 rounded-full shadow-lg "
+      className="fixed bottom-24 right-5 bg-brand-mid text-brand-light p-1 md:p-3 rounded-full shadow-lg "
       aria-label="Scroll to top"
     >
       <FaArrowUp size={20} />

@@ -53,15 +53,15 @@ export default function Banner() {
             suppressHydrationWarning
             className="absolute flex flex-col justify-center h-full w-full mx-auto space-y-7 z-50 bg-black/10"
           >
-            <div className="container mx-auto text-center">
+            <div className="px-4 mx-auto text-center">
               <motion.h1
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, ease: "easeIn" }}
                 suppressHydrationWarning
-                className="mb-4 font-extrabold  text-brand-dark text-4xl md:text-5xl lg:text-6xl"
+                className="mb-4 font-extrabold  text-brand-dark text-2xl lg:text-5xl "
               >
-                Luxury Rental Apartments for Your Comfort
+                Your Trusted Tourism Partner & Luxury Apartments in Kochi
               </motion.h1>
 
               <motion.p
@@ -71,7 +71,8 @@ export default function Banner() {
                 className="text-brand-dark mb-8 text-lg lg:text-2xl sm:px-16 xl:px-48 font-semibold min-h-[48px]"
                 suppressHydrationWarning
               >
-                Experience homely living with modern amenities and comfort.
+                Offering comfort, convenience, and premium experiences for
+                travelers and residents alike.
               </motion.p>
               <Link href="#apartments">
                 <motion.button

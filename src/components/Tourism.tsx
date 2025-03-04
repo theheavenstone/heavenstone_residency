@@ -27,12 +27,24 @@ export default function Tourism() {
           className="text-start md:text-center pt-10 px-6  text-brand-dark"
         >
           <h1 className="text-4xl font-bold md:text-5xl">
-            Explore the Best of Kochi with Heavenstone Residency
+            Explore the Best of Kochi with Heavenstone
           </h1>
           <p className="mt-4 text-lg md:text-xl">
             Discover Kochi: A Blend of Heritage, Culture, and Scenic Beauty
           </p>
         </motion.header>
+
+        <motion.p
+          variants={fadeIn}
+          className="mt-4 text-xl text-brand-dark text-start md:text-center"
+        >
+          At <strong>Heavenstone</strong>, we cater to all your travel needs,
+          ensuring a seamless and memorable experience. We provide end-to-end
+          cab services, customized travel planning, and sightseeing tours.
+          Whether you&apos;re exploring Kerala&apos;s scenic beauty or need
+          assistance with itinerary planning, we&apos;ve got you covered for a
+          hassle-free and enriching journey.
+        </motion.p>
 
         <motion.main className="container mx-auto px-6 pt-10">
           <motion.section variants={fadeIn} className="mb-12">
@@ -45,12 +57,6 @@ export default function Tourism() {
               Whether you&apos;re a history enthusiast, a nature lover, or
               someone who enjoys vibrant city life, Kochi offers something for
               everyone.
-            </p>
-            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-              At <strong>Heavenstone Residency</strong>, we ensure that your
-              stay is not only comfortable but also enriched with unforgettable
-              travel experiences. Explore the best tourist attractions in and
-              around Kochi, all easily accessible from our premium apartments.
             </p>
           </motion.section>
 
@@ -143,14 +149,13 @@ export default function Tourism() {
 
           <motion.section variants={fadeIn} className="mb-12">
             <h2 className="text-3xl font-bold text-center text-brand-dark">
-              🌿 Plan Your Stay with Heavenstone Residency
+              🌿 Plan Your Stay with Heavenstone
             </h2>
             <p className="mt-4 text-lg text-brand-dark text-start md:text-center">
-              Located in the heart of Kochi,{" "}
-              <strong>Heavenstone Residency</strong> offers luxurious
-              fully-furnished apartments that serve as a perfect base for
-              exploring the city. Whether you’re visiting for a short getaway or
-              an extended stay, we ensure a comfortable and enriching
+              Located in the heart of Kochi, <strong>Heavenstone</strong> offers
+              luxurious fully-furnished apartments that serve as a perfect base
+              for exploring the city. Whether you’re visiting for a short
+              getaway or an extended stay, we ensure a comfortable and enriching
               experience.
             </p>
             <motion.div className="mt-6 flex flex-col lg:flex-row justify-center space-y-4 lg:space-x-6 lg:space-y-0">
