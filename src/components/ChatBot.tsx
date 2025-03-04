@@ -48,11 +48,6 @@ const responses: { [key: string]: string } = {
     "Hello! I'm here to assist you with Heavenstone Residency. Feel free to ask about our apartments, amenities, pricing, location, tourism, or packages. 😊",
 };
 
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1 } },
-};
-
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<
