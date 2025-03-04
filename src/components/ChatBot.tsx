@@ -24,7 +24,17 @@ const responses: { [key: string]: string } = {
     "🏙 **Nearby Landmarks:**\n- **Aster Medcity** (3 km)\n- **North Railway Station** (3 km)\n- **Lourdes Hospital** (1 km)\n- **Marine Drive** (3 km)\n- **High Court of Kerala** (3 km).",
   "nearest places to visit":
     "🎡 **Tourist Attractions in Kochi:**\n- **Fort Kochi** – Colonial-era charm & Chinese fishing nets\n- **Marine Drive** – Scenic waterfront promenade\n- **Cherai Beach** – Tranquil backwaters & golden sands\n- **Jew Town & Paradesi Synagogue** – Historic landmarks.",
-
+  amenities:
+    " **Amenities at Heavenstone Residency:**\n" +
+    "- **Fully Furnished Apartments** – Modern & stylish interiors\n" +
+    "- **High-speed 200Mbps WiFi** – Seamless connectivity\n" +
+    "- **Pet-friendly Accommodation** – Furry friends are welcome!\n" +
+    "- **Laundry Services** – Available on request\n" +
+    "- **Secure Car Parking** – Safe & spacious parking\n" +
+    "- **Flexible Stay Options** – Short-term & long-term stays\n" +
+    "- **Gourmet Dining Plans** – Ordinary & premium meal options\n" +
+    "- **Housekeeping & Fresh Bedsheets** – Regular cleaning included\n" +
+    "- **On-call Doctor Available** – Medical assistance when needed",
   tourism:
     "🚕 **Tourism Services at Heavenstone Residency**\nWe provide **cab facilities** and help plan your day with custom itineraries. Visit Kochi’s top attractions like **Fort Kochi, Marine Drive, Cherai Beach, and Jew Town** with our comfortable transport services.",
   "tourist places":
@@ -85,16 +95,20 @@ export default function ChatBot() {
 
     setTimeout(() => {
       const lowerInput = input.toLowerCase();
-      const matchedResponse =
-        Object.keys(responses).find((keyword) =>
-          lowerInput.includes(keyword)
-        ) || "default";
+
+      let matchedKey = Object.keys(responses).find((key) =>
+        lowerInput.includes(key)
+      );
+
+      if (!matchedKey) {
+        matchedKey = "default";
+      }
 
       setIsTyping(false);
 
       setMessages((prev) => [
         ...prev,
-        { text: responses[matchedResponse], sender: "bot" },
+        { text: responses[matchedKey], sender: "bot" },
       ]);
     }, 500);
   };
