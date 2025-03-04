@@ -17,7 +17,10 @@ const responses: { [key: string]: string } = {
     "🏠 **2BHK Luxury Apartment**\n- **AC:** ₹4,000/day | **Non-AC:** ₹3,000/day\n- Spacious with separate living & dining areas\n- Premium furnishings throughout.",
   "two bhk":
     "🏠 **2BHK Luxury Apartment**\n- **AC:** ₹4,000/day | **Non-AC:** ₹3,000/day\n- Spacious with separate living & dining areas\n- Premium furnishings throughout.",
-
+  pricing:
+    "💰 **Apartment Rates:**\n\n" +
+    "🏠 **1BHK Premium Apartment**\n- **AC:** ₹2,500/day | **Non-AC:** ₹1,500/day\n- Fully furnished with modern amenities\n- High-speed **200Mbps WiFi**\n- Ideal for solo travelers or couples.\n\n" +
+    "🏠 **2BHK Luxury Apartment**\n- **AC:** ₹4,000/day | **Non-AC:** ₹3,000/day\n- Spacious with separate living & dining areas\n- Premium furnishings throughout.",
   location:
     "📍 **Heavenstone Residency** is located in **Vaduthala, Kochi, Kerala, India**. \n[Google Maps link](https://maps.app.goo.gl/9g3NvnkKSPXjhwvT9).",
   "nearest places":
@@ -40,12 +43,7 @@ const responses: { [key: string]: string } = {
   "tourist places":
     "🎡 **Explore Kochi’s Best Attractions:**\n- **Fort Kochi** – Colonial-era charm & Chinese fishing nets\n- **Marine Drive** – Scenic waterfront promenade\n- **Cherai Beach** – Tranquil backwaters & golden sands\n- **Jew Town & Paradesi Synagogue** – Historic landmarks.\n🚕 *We offer cab services to help you explore!*",
 
-  "food plan":
-    "🍽 **Dining Plans at Heavenstone Residency:**\n✅ **Ordinary Plan:** ₹300/day per person (Home-style meals)\n✅ **Premium Plan:** ₹600/day per person (Chef-curated gourmet meals).",
-  "meal plan":
-    "🍽 **Dining Plans at Heavenstone Residency:**\n✅ **Ordinary Plan:** ₹300/day per person (Home-style meals)\n✅ **Premium Plan:** ₹600/day per person (Chef-curated gourmet meals).",
-  kitchen:
-    "🍽 **Dining Plans at Heavenstone Residency:**\n✅ **Ordinary Plan:** ₹300/day per person (Home-style meals)\n✅ **Premium Plan:** ₹600/day per person (Chef-curated gourmet meals).",
+  food: "🍽 **Dining Plans at Heavenstone Residency:**\n✅ **Ordinary Plan:** ₹300/day per person (Home-style meals)\n✅ **Premium Plan:** ₹600/day per person (Chef-curated gourmet meals).",
   contact:
     "📞 You can reach Heavenstone Residency at **+91 9447959544** or email us at **theheavenstone@gmail.com**.",
   booking: `To book an apartment, call us at **+91 9447959544** or email **theheavenstone@gmail.com**. You can also <span class="text-blue-600 font-bold"> [book through Airbnb](https://www.airbnb.co.in/rooms/1154626879906290509?viralityEntryPoint=1&s=76&source_impression_id=p3_1739118285_P38xu2Kd_oy4YJAa) </span>.`,
@@ -99,6 +97,104 @@ export default function ChatBot() {
       let matchedKey = Object.keys(responses).find((key) =>
         lowerInput.includes(key)
       );
+
+      if (
+        (lowerInput.includes("1 bhk") ||
+          lowerInput.includes("one bhk") ||
+          lowerInput.includes("one")) &&
+        (lowerInput.includes("rent") ||
+          lowerInput.includes("price") ||
+          lowerInput.includes("cost") ||
+          lowerInput.includes("rate") ||
+          lowerInput.includes("charge"))
+      ) {
+        matchedKey = "1 bhk";
+      } else if (
+        (lowerInput.includes("2 bhk") ||
+          lowerInput.includes("two bhk") ||
+          lowerInput.includes("two")) &&
+        (lowerInput.includes("rent") ||
+          lowerInput.includes("price") ||
+          lowerInput.includes("cost") ||
+          lowerInput.includes("rate") ||
+          lowerInput.includes("charge"))
+      ) {
+        matchedKey = "2 bhk";
+      } else if (
+        lowerInput.includes("rent") ||
+        lowerInput.includes("price") ||
+        lowerInput.includes("cost") ||
+        lowerInput.includes("rate") ||
+        lowerInput.includes("charge")
+      ) {
+        matchedKey = "pricing";
+      }
+
+      if (
+        lowerInput.includes("food") ||
+        lowerInput.includes("meal") ||
+        lowerInput.includes("kitchen") ||
+        lowerInput.includes("dining") ||
+        lowerInput.includes("breakfast") ||
+        lowerInput.includes("lunch") ||
+        lowerInput.includes("dinner") ||
+        lowerInput.includes("cuisine") ||
+        lowerInput.includes("restaurant") ||
+        lowerInput.includes("menu") ||
+        lowerInput.includes("food options") ||
+        lowerInput.includes("food plans") ||
+        lowerInput.includes("dining plans") ||
+        lowerInput.includes("meal options")
+      ) {
+        matchedKey = "food";
+      }
+
+      if (
+        lowerInput.includes("facility") ||
+        lowerInput.includes("amenity") ||
+        lowerInput.includes("service") ||
+        lowerInput.includes("feature") ||
+        lowerInput.includes("offer") ||
+        lowerInput.includes("option") ||
+        lowerInput.includes("benefit") ||
+        lowerInput.includes("facilities") ||
+        lowerInput.includes("services") ||
+        lowerInput.includes("features") ||
+        lowerInput.includes("offers") ||
+        lowerInput.includes("options") ||
+        lowerInput.includes("benefits") ||
+        lowerInput.includes("advantage") ||
+        lowerInput.includes("advantages")
+      ) {
+        matchedKey = "amenities";
+      }
+
+      if (
+        lowerInput.includes("contact") ||
+        lowerInput.includes("call") ||
+        lowerInput.includes("email") ||
+        lowerInput.includes("contact details") ||
+        lowerInput.includes("contact information") ||
+        lowerInput.includes("contact us") ||
+        lowerInput.includes("contacting") ||
+        lowerInput.includes("calling") ||
+        lowerInput.includes("emailing")
+      ) {
+        matchedKey = "contact";
+      }
+
+      if (
+        lowerInput.includes("location") ||
+        lowerInput.includes("address") ||
+        lowerInput.includes("direction") ||
+        lowerInput.includes("reach") ||
+        lowerInput.includes("reaching") ||
+        lowerInput.includes("map") ||
+        lowerInput.includes("landmark") ||
+        lowerInput.includes("visit")
+      ) {
+        matchedKey = "location";
+      }
 
       if (!matchedKey) {
         matchedKey = "default";
