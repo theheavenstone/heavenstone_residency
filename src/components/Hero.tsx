@@ -181,15 +181,24 @@ export default function Hero() {
                   Premium Living in Vadutala, Kochi | Heavenstone Residency
                 </h2>
                 <p className="sub-heading !text-start leading-tight !text-lg">
-                  Discover Heavenstone Residency in the heart of Vadutala, Kochi
-                  your destination for luxurious, fully furnished apartments.
-                  Ideal for corporate stays, workcations, or a serviced
-                  apartment experience, our property is designed to be both
-                  family friendly and pet friendly. With key landmarks such as
-                  Aster Medcity, North Railway Station, the High Court, and
-                  Marine Drive within a 3 km radius and Lourdes Hospital just 1
-                  km away enjoy the perfect blend of upscale living and
-                  convenience.
+                  Discover Heavenstone Residency in the heart of{" "}
+                  <span className="font-semibold">Vadutala, Kochi</span> your
+                  destination for luxurious, fully furnished apartments. Ideal
+                  for{" "}
+                  <span className="font-semibold">
+                    corporate stays, workcations, staycation
+                  </span>{" "}
+                  or a serviced apartment experience, our property is designed
+                  to be both family friendly and pet friendly. With key
+                  landmarks such as{" "}
+                  <span className="font-semibold">
+                    Aster Medcity, North Railway Station, the High Court, and
+                    Marine Drive
+                  </span>{" "}
+                  within a 3 km radius and{" "}
+                  <span className="font-semibold">Lourdes Hospital</span>
+                  {""} just 1 km away enjoy the perfect blend of upscale living
+                  and convenience.
                 </p>
                 <VideoModal
                   label="Promo Video"

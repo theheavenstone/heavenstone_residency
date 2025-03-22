@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Heavenstone | Premium Apartments & Tourism in Kochi",
   description:
-    "Rent fully furnished luxury apartments in Kochi at Heavenstone. Short & long-term stays, pet-friendly, corporate housing, premium amenities, guided tourism, and exclusive Kerala travel packages.",
+    "Rent fully furnished luxury apartments in Kochi at Heavenstone. Short & long-term stays, pet-friendly, corporate housing, premium amenities,staycation , workcation, guided tourism, and exclusive Kerala travel packages.",
   keywords: [
     "Luxury apartments Kochi",
     "furnished rentals",
@@ -40,6 +40,8 @@ export const metadata: Metadata = {
     "Kochi city travel guide",
     "Kathakali dance performances",
     "customized Kerala tours",
+    "staycation",
+    "workcation",
   ],
   robots: "index, follow",
   metadataBase: new URL("https://www.heavenstone.in"),
