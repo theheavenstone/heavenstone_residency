@@ -36,8 +36,8 @@ export default function Banner() {
             <Image
               src="/images/banner.webp"
               alt="Luxury Apartment"
-              width={1920}
-              height={1080}
+              fill={true}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 50vw"
               className="object-cover w-full h-full"
               priority={true}
               loading="eager"
