@@ -1,12 +1,6 @@
 "use client";
 
 import { Navbar } from "flowbite-react";
-import {
-  AnimatePresence,
-  domAnimation,
-  LazyMotion,
-  motion,
-} from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -63,152 +57,135 @@ export default function Header() {
   };
 
   return (
-    <LazyMotion features={domAnimation}>
-      <AnimatePresence mode="wait">
-        <motion.div
-          key="navbar-motion"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: "easeIn" }}
-          className="absolute top-0 left-0 w-full z-50 bg-white/30 backdrop-blur-md xl:backdrop-blur-none xl:shadow-none shadow-xl xl:bg-transparent"
-        >
-          <Navbar
-            fluid
-            theme={navTheme}
-            className="px-0 xl:px-10 bg-transparent"
+    <div
+      key="navbar-motion"
+      className="absolute top-0 left-0 w-full z-50 bg-white/30 backdrop-blur-md xl:backdrop-blur-none xl:shadow-none shadow-xl xl:bg-transparent"
+    >
+      <Navbar fluid theme={navTheme} className="px-0 xl:px-10 bg-transparent">
+        <Navbar.Brand href="/">
+          <div className="self-center flex items-center whitespace-nowrap text-lg md:text-2xl font-semibold text-brand-dark uppercase">
+            {" "}
+            <Image
+              src="/images/Logo.webp"
+              alt="logo"
+              width={42}
+              height={42}
+              className="relative bottom-1 w-auto h-auto object-cover"
+              priority={true}
+              loading="eager"
+              suppressHydrationWarning
+            />
+            <p className="flex gap-1">
+              <span>Heavenstone</span>
+              <FaRegRegistered size={15} />
+            </p>
+          </div>
+        </Navbar.Brand>
+
+        <Navbar.Toggle />
+
+        <Navbar.Collapse>
+          <Navbar.Link
+            as={Link}
+            href="/"
+            className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
           >
-            <Navbar.Brand href="/">
-              <motion.div
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, ease: "easeIn" }}
-                viewport={{ once: true }}
-                className="self-center flex items-center whitespace-nowrap text-lg md:text-2xl font-semibold text-brand-dark uppercase"
-              >
-                {" "}
-                <Image
-                  src="/images/Logo.webp"
-                  alt="logo"
-                  width={42}
-                  height={42}
-                  className="relative bottom-1 w-auto h-auto object-cover"
-                  priority={true}
-                  loading="eager"
-                  suppressHydrationWarning
-                />
-                <p className="flex gap-1">
-                  <span>Heavenstone</span>
-                  <FaRegRegistered size={15} />
-                </p>
-              </motion.div>
-            </Navbar.Brand>
+            Home
+          </Navbar.Link>
 
-            <Navbar.Toggle />
+          <Navbar.Link
+            as={Link}
+            href="/#apartments"
+            className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+          >
+            Apartments
+          </Navbar.Link>
 
-            <Navbar.Collapse>
-              <Navbar.Link
-                as={Link}
-                href="/"
-                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-              >
-                Home
-              </Navbar.Link>
+          <Navbar.Link
+            as={Link}
+            href="/#gallery"
+            className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+          >
+            Gallery
+          </Navbar.Link>
 
-              <Navbar.Link
-                as={Link}
-                href="/#apartments"
-                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-              >
-                Apartments
-              </Navbar.Link>
+          <Navbar.Link
+            as={Link}
+            href="/#dining"
+            className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+          >
+            Kitchen
+          </Navbar.Link>
 
-              <Navbar.Link
-                as={Link}
-                href="/#gallery"
-                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-              >
-                Gallery
-              </Navbar.Link>
+          <Navbar.Link
+            as={Link}
+            href="/tourism"
+            className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+          >
+            Tourism
+          </Navbar.Link>
 
-              <Navbar.Link
-                as={Link}
-                href="/#dining"
-                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-              >
-                Kitchen
-              </Navbar.Link>
+          <Navbar.Link
+            as={Link}
+            href="/about"
+            className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+          >
+            About
+          </Navbar.Link>
 
-              <Navbar.Link
-                as={Link}
-                href="/tourism"
-                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-              >
-                Tourism
-              </Navbar.Link>
+          <Navbar.Link
+            as={Link}
+            href="/contact"
+            className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
+          >
+            Contact
+          </Navbar.Link>
 
-              <Navbar.Link
-                as={Link}
-                href="/about"
-                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-              >
-                About
-              </Navbar.Link>
+          <div className="xl:hidden gap-4 items-center">
+            <Navbar.Link
+              className="flex gap-2 items-center tracking-tight text-brand-dark hover:!text-blue-600 hover:underline transition-colors ease-in-out duration-300 lg:text-xl"
+              href="tel:+919447959544"
+              aria-label="Call us at 9447959544"
+            >
+              <IoCallSharp size={24} className="text-brand-dark" />
+              9447959544
+            </Navbar.Link>
 
-              <Navbar.Link
-                as={Link}
-                href="/contact"
-                className="text-brand-dark hover:!text-brand-light lg:text-xl transition-colors ease-in-out duration-300"
-              >
-                Contact
-              </Navbar.Link>
+            <Navbar.Link
+              href="https://wa.me/919447959544"
+              className="flex gap-2 items-center tracking-tight lg:text-xl"
+              aria-label="whatsapp icon"
+            >
+              <FaWhatsapp size={24} className="text-brand-dark" />
+              <span className="xl:hidden text-brand-dark hover:!text-brand-light lg:text-xl">
+                Whatsapp
+              </span>
+            </Navbar.Link>
+          </div>
+        </Navbar.Collapse>
 
-              <div className="xl:hidden gap-4 items-center">
-                <Navbar.Link
-                  className="flex gap-2 items-center tracking-tight text-brand-dark hover:!text-blue-600 hover:underline transition-colors ease-in-out duration-300 lg:text-xl"
-                  href="tel:+919447959544"
-                  aria-label="Call us at 9447959544"
-                >
-                  <IoCallSharp size={24} className="text-brand-dark" />
-                  9447959544
-                </Navbar.Link>
+        <Navbar.Collapse className="hidden xl:flex">
+          <Navbar.Link
+            className="flex gap-1 items-center tracking-tight text-brand-dark hover:!text-blue-600 hover:underline transition-colors ease-in-out duration-300 lg:text-xl"
+            href="tel:+919447959544"
+            aria-label="Call us at 9447959544"
+          >
+            <IoCallSharp size={24} className="text-brand-dark" />
+            9447959544
+          </Navbar.Link>
 
-                <Navbar.Link
-                  href="https://wa.me/919447959544"
-                  className="flex gap-2 items-center tracking-tight lg:text-xl"
-                  aria-label="whatsapp icon"
-                >
-                  <FaWhatsapp size={24} className="text-brand-dark" />
-                  <span className="xl:hidden text-brand-dark hover:!text-brand-light lg:text-xl">
-                    Whatsapp
-                  </span>
-                </Navbar.Link>
-              </div>
-            </Navbar.Collapse>
-
-            <Navbar.Collapse className="hidden xl:flex">
-              <Navbar.Link
-                className="flex gap-1 items-center tracking-tight text-brand-dark hover:!text-blue-600 hover:underline transition-colors ease-in-out duration-300 lg:text-xl"
-                href="tel:+919447959544"
-                aria-label="Call us at 9447959544"
-              >
-                <IoCallSharp size={24} className="text-brand-dark" />
-                9447959544
-              </Navbar.Link>
-
-              <Navbar.Link
-                href="https://wa.me/919447959544"
-                className="flex gap-2 items-center tracking-tight lg:text-xl"
-                aria-label="whatsapp icon"
-              >
-                <FaWhatsapp size={24} className="text-brand-dark" />
-                <span className="md:hidden text-brand-dark hover:!text-brand-light lg:text-xl">
-                  Whatsapp
-                </span>
-              </Navbar.Link>
-            </Navbar.Collapse>
-          </Navbar>
-        </motion.div>
-      </AnimatePresence>
-    </LazyMotion>
+          <Navbar.Link
+            href="https://wa.me/919447959544"
+            className="flex gap-2 items-center tracking-tight lg:text-xl"
+            aria-label="whatsapp icon"
+          >
+            <FaWhatsapp size={24} className="text-brand-dark" />
+            <span className="md:hidden text-brand-dark hover:!text-brand-light lg:text-xl">
+              Whatsapp
+            </span>
+          </Navbar.Link>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
   );
 }

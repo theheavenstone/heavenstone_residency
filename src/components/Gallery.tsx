@@ -95,7 +95,7 @@ export default function Gallery() {
                       alt={`${index}-carousel`}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
                       quality={80}
-                      priority={true}
+                      loading={index === 0 ? "eager" : "lazy"}
                       className="rounded-xl w-full aspect-[4/3] object-cover"
                     />
                   </div>

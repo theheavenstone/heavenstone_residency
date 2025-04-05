@@ -226,7 +226,8 @@ export default function ChatBot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-blue-800 text-white p-3 rounded-full shadow-lg"
+          className="bg-blue-700 text-white font-extrabold p-3 rounded-full shadow-lg"
+          aria-label="Open chat"
         >
           <FiMessageCircle className="h-6 w-6 lg:h-8 lg:w-8" />
         </button>
