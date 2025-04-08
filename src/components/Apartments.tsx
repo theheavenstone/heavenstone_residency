@@ -27,9 +27,9 @@ export default function ApartmentsPage() {
             viewport={{ once: true }}
             className="container mx-auto pb-10 space-y-4"
           >
-            <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark">
+            <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark">
               Our Living Spaces
-            </h1>
+            </h2>
 
             <p key="apartment-description" className="sub-heading text-center">
               Choose from our carefully crafted 1BHK and 2BHK apartments,
@@ -48,9 +48,9 @@ export default function ApartmentsPage() {
             >
               <div className="flex flex-col p-6 mx-auto text-brand-dark space-y-4">
                 <div>
-                  <h2 className="mb-1.5 text-[30px] md:text-3xl text-center font-extrabold">
+                  <h3 className="mb-1.5 text-[30px] md:text-3xl text-center font-extrabold">
                     1BHK Premium Apartment
-                  </h2>
+                  </h3>
                   <p className="font-medium text-center text-base sm:text-lg">
                     Perfect for solo travelers or couples
                   </p>

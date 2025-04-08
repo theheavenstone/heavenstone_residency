@@ -8,23 +8,16 @@ import {
   motion,
 } from "framer-motion";
 
-import { Libre_Baskerville } from "next/font/google";
 import Link from "next/link";
 
 import { FaArrowRightLong } from "react-icons/fa6";
-
-const montserrat = Libre_Baskerville({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function Banner() {
   return (
     <LazyMotion features={domAnimation}>
       <AnimatePresence mode="wait">
         <div
-          className={`${montserrat.className} w-full h-screen relative z-0 rounded-none overflow-hidden`}
+          className={` w-full h-screen relative z-0 rounded-none overflow-hidden`}
         >
           <motion.div
             initial={{ opacity: 0, scale: 1.1 }}

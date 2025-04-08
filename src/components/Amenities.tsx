@@ -131,9 +131,9 @@ export default function Amenities() {
             viewport={{ once: true }}
             className="text-brand-dark text-center mt-16"
           >
-            <h1 className="mb-4 text-4xl tracking-tight font-extrabold">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold">
               Premium Amenities for a Luxurious Stay
-            </h1>
+            </h2>
 
             <p key="amenities-description" className="sub-heading">
               Experience comfort, convenience, and modern living at its finest.
@@ -176,9 +176,9 @@ export default function Amenities() {
                     <div className="flex justify-center items-center mb-4 bg-primary-100 rounded">
                       {item.icon}
                     </div>
-                    <h2 className="mb-2 text-xl text-center font-bold text-brand-dark">
+                    <h3 className="mb-2 text-xl text-center font-bold text-brand-dark">
                       {item.title}
-                    </h2>
+                    </h3>
 
                     <ul className="text-brand-dark my-6 space-y-4">
                       {item.features.map((feature, i) => (

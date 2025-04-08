@@ -69,9 +69,9 @@ export default function Gallery() {
             viewport={{ once: true }}
             className="container mx-auto pb-10 space-y-4"
           >
-            <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark">
+            <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark">
               Discover Your Ideal Home – A Glimpse Inside
-            </h1>
+            </h2>
 
             <p key="gallery-description" className="sub-heading text-center">
               Take a look inside our thoughtfully designed apartments, offering

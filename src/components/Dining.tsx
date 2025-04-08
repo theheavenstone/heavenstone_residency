@@ -26,9 +26,9 @@ export default function Dining() {
             viewport={{ once: true }}
             className="container mx-auto pb-10 space-y-4"
           >
-            <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark">
+            <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark">
               Curated Dining Experience
-            </h1>
+            </h2>
 
             <p key="dining-description" className="sub-heading text-center">
               Indulge in a culinary journey that combines flavor, nutrition, and
@@ -139,7 +139,7 @@ export default function Dining() {
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h2 className="heading-1">Our Food Philosophy</h2>
+              <h3 className="heading-1">Our Food Philosophy</h3>
 
               <p key="food-philosophy-description" className="sub-heading">
                 At <b>Heavenstone Residency</b>, we believe that food is more

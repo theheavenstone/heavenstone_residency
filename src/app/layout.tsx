@@ -24,30 +24,44 @@ export const metadata: Metadata = {
   description:
     "Book fully furnished luxury apartments in Kochi at Heavenstone Residency. Ideal for monthly rentals, staycations, workcations, corporate stays, and guided tourism in Kerala.",
   keywords: [
+    // 🔑 Primary Keywords
     "Luxury apartments in Kochi",
-    "Furnished rentals in Kochi",
-    "Best serviced apartments in Kochi",
-    "Premium rentals in Kochi",
-    "Monthly apartment rentals Kochi",
-    "Corporate housing Kochi",
-    "Business stays in Kochi",
-    "Staycation apartments Kochi",
-    "Workcation rentals Kerala",
-    "Short-term rentals Kochi",
-    "Long-term stays in Kochi",
-    "Extended stay apartments Kerala",
-    "Vacation rentals Kochi",
-    "Pet-friendly apartments",
+    "Furnished apartments in Kochi",
+    "Serviced apartments in Kochi",
+    "Monthly rentals in Kochi",
+    "Corporate stays in Kochi",
+    "Workcation apartments in Kerala",
+    "Staycation rentals in Kochi",
+    "Short-term rentals in Kochi",
+    "Long-term apartment rentals Kochi",
+
+    // 🧳 Travel & Tourism
+    "Vacation apartments in Kochi",
+    "Tourist accommodation Kochi",
+    "Holiday apartments near Fort Kochi",
+    "Places to stay in Kochi",
+    "Kochi sightseeing accommodation",
+    "Kerala tourism apartments",
+
+    // 🐾 Niche & Features
+    "Pet-friendly apartments in Kochi",
     "Daily rental apartments Kochi",
-    "Kerala tourism",
-    "Accommodation near Fort Kochi",
-    "Kochi sightseeing stays",
-    "Tourist places in Kochi",
-    "Things to do in Kochi",
-    "Best places to stay in Kochi",
-    "Kochi city travel guide",
-    "Kathakali performances",
-    "Customized Kerala tours",
+    "Business travel stays Kochi",
+    "Extended stays in Kerala",
+    "Fully furnished apartments Kochi",
+
+    // 🎯 Long-tail Keywords (high-conversion)
+    "Best luxury apartments for rent in Kochi",
+    "Affordable serviced apartments in Kochi",
+    "Top-rated monthly rental apartments in Kochi",
+    "Corporate housing near Kochi city center",
+    "Comfortable workcation homes in Kerala",
+    "Stay near Fort Kochi tourist attractions",
+
+    // 🧭 Value Adds
+    "Guided Kerala tours with accommodation",
+    "Cultural stays in Kochi with Kathakali shows",
+    "Kochi travel guide with apartment rentals",
   ],
   robots: {
     index: true,
@@ -278,6 +292,7 @@ export default function RootLayout({
                   sameAs: [
                     "https://www.facebook.com/people/Heavenstone-Residency/61560117024575",
                     "https://www.airbnb.co.in/users/show/577066250",
+                    "https://wa.me/919447959544",
                   ],
                 },
                 {

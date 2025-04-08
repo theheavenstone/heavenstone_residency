@@ -52,7 +52,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h1 className="heading">Experience Luxury Living in Every Stay</h1>
+            <h2 className="heading">Experience Luxury Living in Every Stay</h2>
             <p key="hero-subtitle" className="sub-heading !text-lg">
               Welcome to Heavenstone Residency Kochi&rsquo;s premier destination
               for luxury, fully furnished rental apartments. Whether
@@ -88,9 +88,9 @@ export default function Hero() {
                 key="hero-highlights"
                 className="text-brand-dark sm:text-lg  flex flex-col justify-center items-center"
               >
-                <h2 key="hero-highlights-title" className="heading-1">
+                <h3 key="hero-highlights-title" className="heading-1">
                   Quick Highlights
-                </h2>
+                </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 text-brand-mid place-items-start gap-0 md:gap-4 md:place-items-center mb-3">
                   <motion.ul
@@ -177,9 +177,9 @@ export default function Hero() {
                 key="hero-image-1"
                 className="text-brand-dark sm:text-lg  flex flex-col justify-center items-center order-2 xl:order-1"
               >
-                <h2 className="heading">
+                <h4 className="heading">
                   Premium Living in Vadutala, Kochi | Heavenstone Residency
-                </h2>
+                </h4>
                 <p className="sub-heading !text-start leading-tight !text-lg">
                   Discover Heavenstone Residency in the heart of{" "}
                   <span className="font-semibold">Vadutala, Kochi</span> your
