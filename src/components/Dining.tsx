@@ -81,9 +81,9 @@ export default function Dining() {
                 className="bg-brand-light/55 rounded-xl h-auto p-5 space-y-4"
               >
                 <div className="flex flex-col p-6 mx-auto text-brand-dark">
-                  <h1 className="mb-1.5 text-[30px] md:text-3xl text-center font-extrabold">
+                  <h2 className="mb-1.5 text-[30px] md:text-3xl text-center font-extrabold">
                     {plan.title}
-                  </h1>
+                  </h2>
                   <p className="font-medium text-center text-base sm:text-lg">
                     {plan.description}
                   </p>
