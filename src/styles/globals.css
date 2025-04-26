@@ -2,53 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-
 select option:hover {
   background-color: #5e4b32 !important; /* Change this to your preferred color */
   color: white !important;
 }
 
 .heading {
-    @apply text-center font-extrabold tracking-tight leading-tight mb-4 text-brand-dark text-2xl md:text-[40px];
+  @apply text-center font-extrabold tracking-tight leading-tight mb-4 text-brand-dark text-2xl md:text-[40px];
 }
 
 .sub-heading {
-    @apply text-center font-light text-lg md:text-2xl text-brand-mid mb-4;
+  @apply text-center font-light text-lg md:text-2xl text-brand-mid mb-4;
 }
 
 .heading-1 {
-    @apply text-center  text-3xl md:text-4xl font-semibold text-brand-mid mb-4;
+  @apply text-center  text-3xl md:text-4xl font-semibold text-brand-mid mb-4;
 }
 
 .icon-list {
-@apply  flex items-center gap-2 text-center text-base md:text-lg text-brand-mid font-light ;
+  @apply flex items-start 2xl:items-center gap-2 text-left 2xl:text-center text-base 2xl:text-lg text-brand-mid font-light;
 }
 
-
 html {
-    scroll-behavior: smooth; 
-  }
-  
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #c4b6933a; 
-    border-radius: 5px;
-  }
+  scroll-behavior: smooth;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background: #8c7851;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #5e4b32;
-  }
-  
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c4b6933a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8c7851;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5e4b32;
+}
 
 .slick-slide > div {
   margin: 0 10px;
@@ -56,14 +53,14 @@ html {
 
 .slick-prev:before,
 .slick-next:before {
-    color: #3e2b24 !important; 
-}
-  
-.slick-prev:hover:before,
-.slick-next:hover:before {
-    color: #3e2b24 !important;
+  color: #3e2b24 !important;
 }
 
-  .slick-dots {
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: #3e2b24 !important;
+}
+
+.slick-dots {
   padding-top: 50px;
 }

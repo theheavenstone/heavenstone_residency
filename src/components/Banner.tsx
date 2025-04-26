@@ -10,7 +10,7 @@ import {
 
 import Link from "next/link";
 
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaRegRegistered } from "react-icons/fa6";
 
 export default function Banner() {
   return (
@@ -46,12 +46,29 @@ export default function Banner() {
             suppressHydrationWarning
             className="absolute flex flex-col justify-center h-full w-full mx-auto space-y-7 z-50 bg-black/10"
           >
-            <div className="px-4 mx-auto text-center">
-              <h1 className="mb-4 font-extrabold  text-brand-dark text-2xl lg:text-5xl ">
+            <div className="px-4 mx-auto text-center  space-y-4 lg:space-y-8">
+              <div className="self-center flex flex-col items-center whitespace-nowrap text-lg md:text-2xl font-semibold text-brand-dark uppercase">
+                {" "}
+                <Image
+                  src="/images/Logo.webp"
+                  alt="logo"
+                  width={72}
+                  height={72}
+                  className="relative bottom-1 w-auto h-auto object-cover"
+                  priority={true}
+                  loading="eager"
+                  suppressHydrationWarning
+                />
+                <p className="flex gap-1">
+                  <span className="text-3xl font-bold">Heavenstone</span>
+                  <FaRegRegistered size={15} />
+                </p>
+              </div>
+              <h1 className="mb-4 font-extrabold leading-tight  text-brand-dark text-3xl lg:text-5xl ">
                 Your Trusted Tourism Partner & Luxury Apartments in Kochi
               </h1>
 
-              <p className="text-brand-dark mb-8 text-lg lg:text-2xl sm:px-16 xl:px-48 font-semibold min-h-[48px]">
+              <p className="text-brand-dark  mb-8 text-lg lg:text-2xl sm:px-16 xl:px-48 font-bold min-h-[48px]">
                 Offering comfort, convenience, and premium experiences for
                 travelers and residents alike.
               </p>

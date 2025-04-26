@@ -177,9 +177,7 @@ export default function Hero() {
                 key="hero-image-1"
                 className="text-brand-dark sm:text-lg  flex flex-col justify-center items-center order-2 xl:order-1"
               >
-                <h4 className="heading">
-                  Premium Living in Vadutala, Kochi | Heavenstone Residency
-                </h4>
+                <h4 className="heading">Premium Living in Kochi, Kerala</h4>
                 <p className="sub-heading !text-start leading-tight !text-lg">
                   Discover Heavenstone Residency in the heart of{" "}
                   <span className="font-semibold">Vadutala, Kochi</span> your
